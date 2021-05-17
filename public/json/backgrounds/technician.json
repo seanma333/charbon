@@ -1,0 +1,13 @@
+{
+	"injury_dc": 6,
+	"skills": ["hacking", "mechanics", "navigation", "perception", "persuasion", "investigation", "gambling", "presence"],
+	"wage": {
+		"die_roll": "2d4",
+		"multiplier": 7000
+	},
+	"roles": ["Mech Repair", "Vehicle Maintenance", "Mech Assembly"],
+	"parting_gifts": [],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [25000,45000,65000,85000,30000]
+}

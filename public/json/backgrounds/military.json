@@ -1,0 +1,13 @@
+{
+	"injury_dc": 8,
+	"skills": ["athletics", "acrobatics", "navigation", "tracking", "perception", "vehicles_aircraft", "vehicles_land", "medicine"],
+	"wage": {
+		"die_roll": "3d4",
+		"multiplier": 10000
+	},
+	"roles": ["Bounty Hunter", "Government Contract", "Private Military"],
+	"parting_gifts": [],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [40000,60000,80000,100000,30000]
+}

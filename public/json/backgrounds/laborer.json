@@ -1,0 +1,38 @@
+{
+	"injury_dc": 5,
+	"skills": ["athletics", "acrobatics", "robotics", "gambling", "engineering", "mechanics", "perception", "vehicles_land"],
+	"wage": {
+		"die_roll": "2d4",
+		"multiplier": 9000
+	},
+	"roles": ["Engineer", "Factory Worker", "Mechanic"],
+	"parting_gifts": [
+		{
+			"type": "gear",
+			"name": "comms_advanced"
+		},
+		{
+			"type": "gear",
+			"price": "clothes_average"
+		},
+		{
+			"type": "gear",
+			"name": "antitoxin"
+		},
+		{
+			"type": "weapon",
+			"name": "phase_shift_sword"
+		},
+		{
+			"type": "weapon",
+			"name": "knife"
+		},
+		{
+			"type": "gear",
+			"name": "sledge_hammer"
+		}
+	],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [20000,40000,60000,80000,30000]
+}

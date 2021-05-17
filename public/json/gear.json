@@ -1,0 +1,290 @@
+{
+	"antitoxin": {
+		"name": "Antitoxin",
+		"cost": 50000,
+		"weight": 1,
+		"description": "A poisoned character who injects themselves with this antitoxin will remove the poisoned condition from themselves. Using the antitoxin on yourself is an interaction, administering the antitoxin to somebody else requires an action."
+	},
+	"backpack": {
+		"name": "Antitoxin",
+		"cost": 2000,
+		"weight": 5,
+		"description": "A backpack is a container made of synthetic materials, and can contain up to two cubic feet of items or material."
+	},
+	"backpack_enhanced": {
+		"name": "Backpack, Enhanced",
+		"cost": 50000,
+		"weight": 6,
+		"description": "Like a regular backpack, this is also a container made of synthetic materials, and can contain up to two cubic feet of items or material. However, the advanced weight distribution of this backpack allows you to carry more weight than usual. When calculating your carrying capacity, consider your Strength score 2 points higher."
+	},
+	"bandolier_ammunition": {
+		"name": "Bandolier, Ammunition",
+		"cost": 2000,
+		"weight": 2,
+		"description": "A bandolier is worn across your body. This bandolier allows you to store up to 50 rounds of ammunition across your chest for easy access."
+	},
+	"bandolier_grenades": {
+		"name": "Bandolier, Grenades",
+		"cost": 2000,
+		"weight": 2,
+		"description": "A bandolier is worn across your body. This bandolier allows you to store up to 8 grenades across your chest for easy access. Be careful not to accidently set any off."
+	},
+	"cigarettes_cheap": {
+		"name": "Cigarettes (20), Cheap",
+		"cost": 45,
+		"weight": 0,
+		"description": "A pack of cheap cigarettes"
+	},
+	"cigarettes_normal": {
+		"name": "Cigarettes (20), Normal",
+		"cost": 90,
+		"weight": 0,
+		"description": "A pack of normal cigarettes"
+	},
+	"clothes_average": {
+		"name": "Clothes, Average",
+		"cost": 5000,
+		"weight": 4,
+		"description": "A set of normal clothing for someone with a day-job."
+	},
+	"clothes_poor": {
+		"name": "Clothes, Poor",
+		"cost": 500,
+		"weight": 2,
+		"description": "A set of worn out, weathered clothing that looks it might be second-hand."
+	},
+	"clothes_wealthy": {
+		"name": "Clothes, Wealthy",
+		"cost": 25000,
+		"weight": 5,
+		"description": "A set of tailored clothing for a wealthy individual"
+	},
+	"comms_advanced": {
+		"name": "Comms, Advanced",
+		"cost": 10000,
+		"weight": 0,
+		"description": "Like the smartphones of the previous century, comms devices are used for connecting to the internet, calling or sending messages to people. These advanced comms can scan a person for vital signs, and use satellite technology to send and receive messages, providing much greater speed and coverage than traditional devices."
+	},
+	"comms_earpiece": {
+		"name": "Comms, Earpiece",
+		"cost": 5000,
+		"weight": 0,
+		"description": "Like the smartphones of the previous century, comms devices are used for connecting to the internet, calling or sending messages to people. This earpiece is a small concealable comms device that functions only for audio. It is voice activated."
+	},
+	"comms_implant": {
+		"name": "Comms, Implant",
+		"cost": 100000,
+		"weight": 0,
+		"description": "Like the smartphones of the previous century, comms devices are used for connecting to the internet, calling or sending messages to people. This comms implant is connected directly to your Neurolink, this comms device functions as an advanced comms device, only directly on your HUD. It cannot be removed, or detected."
+	},
+	"comms_walkie_talkie": {
+		"name": "Comms, Walkie Talkie",
+		"cost": 1000,
+		"weight": 0,
+		"description": "The most basic, and most reliable form of comms is the walkie talkie, which uses radio signals to send and receive messages and audio with other walkie talkies within half a mile."
+	},
+	"crowbar": {
+		"name": "Crowbar",
+		"cost": 250,
+		"weight": 5,
+		"description": "Using a crowbar grants advantage to Strength checks where the crowbar’s leverage can be applied."
+	},
+	"drink_bottle": {
+		"name": "Drink Bottle",
+		"cost": 200,
+		"weight": 0,
+		"description": "A squirt bottle."
+	},
+	"duct_tape": {
+		"name": "Duct Tape",
+		"cost": 20,
+		"weight": 0.5,
+		"description": "A roll of duct tape."
+	},
+	"energy_drink": {
+		"name": "Energy Drink",
+		"cost": 50,
+		"weight": 0,
+		"description": "An energy drink, once consumed, temporarily negates one level of exhaustion, grants the user +1 on initiative checks and reflex saving throws for 15 minutes. These drinks are highly toxic, and anybody who attempts to drink more than 1 in a 24 hour period must make a DC 15 Fortitude Saving Throw or gain one level of Exhaustion. For each energy drink consumed above 2 in a 24 hour period, the save DC increases by 5."
+	},
+	"firebomb": {
+		"name": "Firebomb",
+		"cost": 15000,
+		"weight": 1,
+		"description": "This simple alcoholic bottle is filled with extremely flammable liquid, and ignited via a rag. As an action, you can throw this bottle up to 20 feet, shattering it on impact. Make a ranged attack against a creature or object, treating the firebomb’s fire as an Improvised Weapon. On a hit, the target takes 1d4 fire damage at the start of each of its turns. A creature can end this damage by using its action to make a DC 10 Dexterity check to extinguish the flames."
+	},
+	"grappling_hook": {
+		"name": "Grappling Hook",
+		"cost": 3000,
+		"weight": 5,
+		"description": "When tied to the end of a rope, a grappling hook can secure the rope to a battlement, window ledge, tree limb, or other protrusion."
+	},
+	"heavy_blanket": {
+		"name": "Heavy Blanket",
+		"cost": 500,
+		"weight": 4,
+		"description": "A heavy blanket."
+	},
+	"holster_ammunition": {
+		"name": "Holster, Ammunition",
+		"cost": 500,
+		"weight": 1,
+		"description": "An ammunition holster can hold up to 20 rounds of ammunition and is worn on the belt."
+	},
+	"holster_heavy_weapon": {
+		"name": "Holster, Heavy Weapon",
+		"cost": 4000,
+		"weight": 1,
+		"description": "A customized holster for heavy weapons that can allow the user to stow a heavy weapon, leaving their hands free."
+	},
+	"holster_one_handed": {
+		"name": "Holster, One Handed",
+		"cost": 1000,
+		"weight": 1,
+		"description": "A holster for a one-handed weapon, worn on the belt."
+	},
+	"holster_one_handed_concealable": {
+		"name": "Holster, One Handed (Concealable)",
+		"cost": 10000,
+		"weight": 1,
+		"description": "This concealable holster is worn underneath your clothes, either on your leg, or under your arm on your torso. A casual visual inspection will not reveal this holster. A character specifically looking for a concealable holster must make a DC 20 perception check to locate it. A physical inspection will reveal it immediately."
+	},
+	"holster_two_handed": {
+		"name": "Holster, Two Handed",
+		"cost": 2000,
+		"weight": 1,
+		"description": "A holster for a two-handed weapon, allowing the user to stow it and leave their hands free, but still easily access it."
+	},
+	"ladder_10_ft": {
+		"name": "Ladder (10 ft)",
+		"cost": 350,
+		"weight": 30,
+		"description": "A 10-ft tall ladder."
+	},
+	"ladder_5_ft": {
+		"name": "Ladder (5 ft)",
+		"cost": 250,
+		"weight": 20,
+		"description": "A 5-ft tall ladder."
+	},
+	"mirror_steel": {
+		"name": "Mirror (Steel)",
+		"cost": 500,
+		"weight": 0.5,
+		"description": "A steel mirror is handy when you want to look around corners, signal friends with reflected sunlight, keep an eye on a medusa, make sure that you look good enough to present yourself to the queen, or examine wounds that you’ve received on hard-to-see parts of your body."
+	},
+	"nanopack": {
+		"name": "Nanopack",
+		"cost": 50000,
+		"weight": 0.5,
+		"description": "A character who injects themselves, or gets injected by this syringe regains 2d4 + 2 hit points. Using the nanopack on yourself is an interaction, administering the nanopack on somebody else requires an action."
+	},
+	"nanopack_enhanced": {
+		"name": "Nanopack, Enhanced",
+		"cost": 10000,
+		"weight": 0.5,
+		"description": "A character who injects themselves, or gets injected by this syringe regains 4d4 + 4 hit points. Using the nanopack, enhanced on yourself is an interaction, administering the nanopack, enhanced on somebody else requires an action."
+	},
+	"nerve_toxin": {
+		"name": "Nerve Toxin",
+		"cost": 100000,
+		"weight": 0.5,
+		"description": "You can use the nerve toxin in this vial to coat one slashing or piercing weapon or up to three pieces of ammunition. Applying the nerve toxin takes an action. A creature hit by the affected weapon or ammunition must make a DC 10 Fortitude saving throw or become incapacitated for 1 minute. Once applied, the nerve toxin retains potency for 1 minute before evaporating."
+	},
+	"notepad_legal": {
+		"name": "Notepad, Legal",
+		"cost": 40,
+		"weight": 1,
+		"description": "A standard legal notepad."
+	},
+	"notepad_pocket": {
+		"name": "Notepad, Pocket",
+		"cost": 30,
+		"weight": 0.5,
+		"description": "A small notepad that can fit in a jacket pocket."
+	},
+	"notepad_waterproof": {
+		"name": "Notepad, Waterproof",
+		"cost": 90,
+		"weight": 2,
+		"description": "A notepad that can be sealed and protected from water."
+	},
+	"passage_offworld": {
+		"name": "Passage, Offworld",
+		"cost": 5000000,
+		"weight": 0,
+		"description": "This one way ticket takes you offworld to one of the colonies. Most of the wealthiest residents of Earth have left the polluted planet to join the fresh colonies. If you are not wealthy, expect life to be even more difficult in the colonies as they run on a harsh caste system."
+	},
+	"pen": {
+		"name": "Pen",
+		"cost": 9,
+		"weight": 0,
+		"description": "A standard ink pen."
+	},
+	"pencil": {
+		"name": "Pencil",
+		"cost": 3,
+		"weight": 0,
+		"description": "A standard graphite pencil."
+	},
+	"pocket_computer": {
+		"name": "Pocket Computer",
+		"cost": 3000,
+		"weight": 0.5,
+		"description": "A small pocket computer. More capable than a comms device, but lacking in the ability to communicate using any method other than the internet."
+	},
+	"rations_1_day": {
+		"name": "Rations (1 day)",
+		"cost": 200,
+		"weight": 0.5,
+		"description": "Rations consist of dry foods suitable for military use. Just add water and watch your ration expand to a semiedible foodstuff capable of sustaining you for 1 day."
+	},
+	"rope_50_ft": {
+		"name": "Rope (50 ft)",
+		"cost": 1000,
+		"weight": 10,
+		"description": "Rope made of plastic fibers, which has 2 hit points. The rope can be burst with a DC 17 Strength check and hold up to 750 lbs of weight."
+	},
+	"rope_50_ft_carbon_fiber": {
+		"name": "Rope (50 ft), Carbon Fiber",
+		"cost": 10000,
+		"weight": 5,
+		"description": "Rope made of carbon fiber, which has 10 hit points. The rope can be burst with a DC 17 Strength check and hold up to 750 lbs of weight."
+	},
+	"satchel": {
+		"name": "Satchel",
+		"cost": 1000,
+		"weight": 3,
+		"description": "A small satchel which can carry small items."
+	},
+	"sledge_hammer": {
+		"name": "Sledge Hammer",
+		"cost": 500,
+		"weight": 10,
+		"description": "This two-handed, iron-headed hammer is good for smashing open boxes."
+	},
+	"sleeping_bag": {
+		"name": "Sleeping Bag",
+		"cost": 1000,
+		"weight": 5,
+		"description": "A sleeping bag for camping which can keep the user warm during cold nights."
+	},
+	"superglue": {
+		"name": "Superglue",
+		"cost": 40,
+		"weight": 0,
+		"description": "A container of super glue."
+	},
+	"torch": {
+		"name": "Flashlight",
+		"cost": 20,
+		"weight": 1,
+		"description": "A flashlight casts bright light in a 60-foot cone and dim light for an additional 60 feet."
+	},
+	"torch_headlamp": {
+		"name": "Headlamp",
+		"cost": 50,
+		"weight": 0.5,
+		"description": "A headlamp casts bright light in a 60-foot cone and dim light for an additional 60 feet."
+	}
+}

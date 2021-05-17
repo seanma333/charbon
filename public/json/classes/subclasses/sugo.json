@@ -1,0 +1,24 @@
+{
+	"name": "Sugo",
+	"description": "<p>The sugo is the real deal when it comes to taking damage. It’s as if they don’t feel pain the same way as normal people.</p>",
+	"class_features": [
+		{
+			"name": "Ballistic Fury",
+			"type": "passive",
+			"level": 3,
+			"description": "<p>Your fury ability grants you resistance to ballistic, fire, and radiation damage.</p>"
+		},
+		{
+			"name": "Furious Focus",
+			"type": "passive",
+			"level": 6,
+			"description": "<p>You cannot be ghosted while in a fury. If you enter fury while being ghosted, the effect is suspended until the fury ends.</p>"
+		},
+		{
+			"name": "Fever Pitch",
+			"type": "passive",
+			"level": 10,
+			"description": "<p>Whenever a creature spends a rally die within 60 ft of you, they roll with advantage.</p>"
+		}
+	]
+}

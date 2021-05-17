@@ -1,0 +1,37 @@
+{
+	"9mm": {
+		"name": "9mm",
+		"price": 25,
+		"quantity": 1
+	},
+	"10mm": {
+		"name": "10mm",
+		"price": 50,
+		"quantity": 1
+	},
+	"shell": {
+		"name": "Shells (Shotgun)",
+		"price": 125,
+		"quantity": 2
+	},
+	"5_56mm": {
+		"name": "5.56mm",
+		"price": 1650,
+		"quantity": 30
+	},
+	"308": {
+		"name": ".308",
+		"price": 300,
+		"quantity": 5,
+	},
+	"keg": {
+		"name": "Keg (Minigun)",
+		"price": 2250,
+		"quantity": 30
+	},
+	"tank": {
+		"name": "Tank (Flamethrower)",
+		"price": 1000,
+		"quantity": 10
+	}
+}

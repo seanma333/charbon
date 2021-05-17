@@ -1,0 +1,36 @@
+{
+	"name": "Street Samurai",
+	"class_features": [
+		{
+			"name": "Bonus Proficiency",
+			"type": "skill_proficiency",
+			"level": 2,
+			"skill_proficiencies": ["history"],
+			"description": "<p>You gain proficiency in History. In addition, whenever you make a History check to recall knowledge about bladed weapons, you doubled your proficiency bonus.</p>"
+		},
+		{
+			"name": "Bladed Damage",
+			"type": "weapon_specialization",
+			"level": 2,
+			"applied_to_weapons": [{"property": "bladed"}],
+			"damage_boost": {
+				"dependent_on": "level",
+				"additional_damage": ["0","1d4","1d4","1d4","1d6","1d6","1d6","1d8","1d8","1d8"]
+			},
+			"description": "<p>You’ve learned to strike vital organs with bladed weapons. Whenever you hit with a melee attack using a bladed weapon, you deal an additional damage die as shown below. The additional dice you roll changes as you gain enforcer levels: At 2nd level the additional die is 1d4. At 5th level the die is 1d6, and at 10th level, 1d8.</p>"
+		},
+		{
+			"name": "Way of the Blade",
+			"type": "weapon_specialization_attack",
+			"level": 7,
+			"action_type": "bonus_action",
+			"description": "<p>Whenever you take the attack action using a bladed weapon, you may make an additional attack with the same weapon as a bonus action.</p>"
+		},
+		{
+			"name": "Sword Mastery",
+			"type": "passive",
+			"level": 10,
+			"description": "<p>Whenever you take the attack action with a bladed weapon you may Dash or Disengage without using an action or bonus action.</p>"
+		}
+	]
+}

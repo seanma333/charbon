@@ -1,0 +1,57 @@
+{
+	"name": "Investigative Journalist",
+	"class_features": [
+		{
+			"name": "Trained Wiretapping",
+			"level": 3,
+			"type": "exploits",
+			"description": "<p>Every journalist knows how to do at least a little hacking, it helps get to the bottom of all hidden networks. At 3rd level you gain access to two of the exploits from the Hacker class, and two botnets. You gain the Computer Interface exploit and one other of your choice. The saving throw for your Exploits is 8 + your Proficiency Bonus + your Tec Modifier.</p>",
+			"known": {
+				"dependent_on": "level",
+				"num_known": [2,2,2,2,2,2,2,2,4],
+				"required": ["computer_interface"]
+			},
+			"ability": "technology"
+		},
+		{
+			"name": "Journalistic Integrity",
+			"level": 6,
+			"type": "passive",
+			"description": "<p>As a journalist you know how to ignore the bluster of those around you and can keep a cool head to remember the situation. Starting at 6th level you have advantage on saving throws made against the frightened condition. Additionally you can ignore attempts to intimidate you using the intimidation skill.</p>"
+		},
+		{
+			"name": "Dedicated",
+			"level": 9,
+			"type": "saving_throw_proficiency",
+			"description": "<p>You have learned how to focus through even the worst trauma. Starting at 9th level you gain proficiency in Mind saving throws, if you already have proficiency with mind saving throws you instead gain proficiency with fortitude saves. If you already are proficient in both mind and fortitude saves, increase your hit point maximum by two per character level.</p>",
+			"saving_throws": ["mind"],
+			"priority": 0
+		},
+		{
+			"name": "Dedicated",
+			"level": 9,
+			"type": "saving_throw_proficiency",
+			"description": "<p>You have learned how to focus through even the worst trauma. Starting at 9th level you gain proficiency in Mind saving throws, if you already have proficiency with mind saving throws you instead gain proficiency with fortitude saves. If you already are proficient in both mind and fortitude saves, increase your hit point maximum by two per character level.</p>",
+			"saving_throws": ["fortitude"],
+			"priority": 1
+		},
+		{
+			"name": "Dedicated",
+			"level": 9,
+			"type": "hp_boost",
+			"description": "<p>You have learned how to focus through even the worst trauma. Starting at 9th level you gain proficiency in Mind saving throws, if you already have proficiency with mind saving throws you instead gain proficiency with fortitude saves. If you already are proficient in both mind and fortitude saves, increase your hit point maximum by two per character level.</p>",
+			"hp_boost": {
+				"dependent_on": "level",
+				"additional_hp": [2,4,6,8,10,12,14,16,18,20]
+			},
+			"priority": 2
+		},
+		{
+			"name": "Get to the Bottom of This",
+			"level": 10,
+			"type": "expert_exploits",
+			"access_to_all": false,
+			"exploits": ["master_ghosting", "master_computer_interface"]
+		}
+	]
+}

@@ -1,0 +1,39 @@
+{
+	"name": "Robomancer",
+	"class_features": [
+		{
+			"name": "Robotics Proficiency",
+			"level": 3,
+			"type": "skill_proficiency",
+			"description": "<p>You gain proficiency with the Robotics and Mechanics skills.</p>",
+			"skill_proficiencies": ["robotics", "mechanics"]
+		},
+		{
+			"name": "Robotic Companion",
+			"level": 3,
+			"type": "companion",
+			"number_of_companions": 1,
+			"description": "<p>You are able to construct a Robotic Companion that is neurolinked to you.</p> <p>With 4 hours of work, and 75 000₩ of materials, you are able to construct a companion to aid you. You can select your Robotic Companion from the following two options: A <b>Multi-Rotor Combat Drone</b>, or a <b>Canine Mech</b>.</p> <p>As you built it and programmed the AI, you determine the personality of your robotic companion. You can only have one Robotic Companion at a time.</p> <p>If your Robotic Companion is destroyed, you are able to repair it, or rebuild it for 25 000₩ with 2 hours of work.</p>",
+			"options": ["multirotor_combat_drone", "canine_mech"]
+		},
+		{
+			"name": "Companion Bond",
+			"level": 3,
+			"type": "passive",
+			"description": "<p>Your robotic companion rolls its own initiative, but you control it.</p> <p>Your robotic companion obeys your commands, which you send via neurolink, as best it can. Your companion has advanced AI and is capable of making its own decisions if you cannot command it. Your companion uses your proficiency bonus in place of its own, it also adds half your level rounded up to its AC and damage rolls, and is considered proficient with all saving throws.</p> <p>You can telepathically communicate with your robotic companion via your neurolink and, as an action you can see and hear what it does until the start of your next turn. While doing so, your body is blind and deaf.</p> <p>Each time you gain a new level, the robotic companion gains an additional hit dice, and new hitpoints. When you gain a Character Improvement, your companion also gains a Character Improvement.</p>"
+		},
+		{
+			"name": "Team Attack",
+			"level": 5,
+			"type": "passive",
+			"description": "<p>Beginning at 5th level, whenever you take the Attack action on your turn, your robotic companion can use its reaction to perform an attack simultaneously.</p>"
+		},
+		{
+			"name": "Advanced Processing Units",
+			"type": "companion",
+			"level": 10,
+			"number_of_companions": 2,
+			"description": "<p>You have learnt to control multiple units at the same time. Starting at 10th level you may construct and use an additional robotic companion. You must issue the same command to both of your companions via basic neurolinks, or you can telepathically communicate with your robotic companions via your neurolink and, as an action you can see and hear what they do until the start of your next turn. While doing so, your body is blind and deaf.</p>"
+		}
+	]
+}

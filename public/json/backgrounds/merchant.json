@@ -1,0 +1,38 @@
+{
+	"injury_dc": 7,
+	"skills": ["navigation", "perception", "deception", "persuasion", "sense_motive", "streetwise", "gambling", "presence"],
+	"wage": {
+		"die_roll": "2d4",
+		"multiplier": 15000
+	},
+	"roles": ["Broker", "Food Stall", "Trader"],
+	"parting_gifts": [
+		{
+			"type": "money",
+			"price": 20000
+		},
+		{
+			"type": "money",
+			"price": 30000
+		},
+		{
+			"type": "gear",
+			"name": "clothes_wealthy"
+		},
+		{
+			"type": "armor",
+			"name": "za_korp_kevlar_jacket"
+		},
+		{
+			"type": "gear",
+			"name": "backpack"
+		},
+		{
+			"type": "gear",
+			"name": "pocket_computer"
+		}
+	],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [35000,55000,75000,95000,30000]
+}

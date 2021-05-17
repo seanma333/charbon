@@ -1,0 +1,39 @@
+{
+	"name": "Private Investigator",
+	"class_features": [
+		{
+			"name": "Bonus Proficiency",
+			"type": "skill_proficiency",
+			"level": 3,
+			"description": "<p>You gain proficiency with Investigation and Sleight of Hand. If you already have Proficiency in either of these skills then your proficiency bonus is doubled with that skill.</p>",			"skill_proficiencies": ["investigation", "sleight_of_hand"],
+			"gain_expertise_if_proficient": true
+		},
+		{
+			"name": "Preferred Mark",
+			"type": "favored_enemy",
+			"level": 3,
+			"description": "<p>You are an expert at tracking and following particular individuals. Beginning at 3rd level you can choose a particular group with which you are an expert about. Choose one from the following list: Civilians, Corporate, Criminal, Synthetics, Machines.</p> <p>You gain advantage on Intelligence (Tracking) to follow your chosen target and Intelligence (Investigation) checks to tell information about your marks activities. You gain an additional preferred mark at 9th level. Additionally if you successfully hit a creature which is one of your marks you may accurately follow that creature within a 1 mile radius. Only one creature may be subject to this effect at a time, it ends when the target gets outside of the 1 mile radius, the target becomes incapacitated, or you take a long rest.</p>",
+			"options": ["civilians", "corporate", "criminal", "synthetics", "machines"]
+		},
+		{
+			"name": "Can I Talk To You For A Minute?",
+			"type": "passive",
+			"level": 6,
+			"description": "<p>You’re an expert in talking your way into areas and places you don’t belong. Starting at 6th level you gain advantage on presence, deception, and disguise kit checks made to hide or alter your identity.</p>"
+		},
+		{
+			"name": "Killer Instincts",
+			"type": "passive",
+			"level": 9,
+			"description": "<p>You know more than you ever thought possible about your preferred marks. Starting at 9th level you gain a +2 bonus to hit and a +2 bonus to damage dealt against your marks.</p>"
+		},
+		{
+			"name": "Expert Shadow",
+			"type": "skill_proficiency",
+			"level": 10,
+			"description": "<p>You have learned to hide in and move between shadows with ease. Starting at 10th level you gain proficiency with the stealth skill. If you already have proficiency with the stealth skill your proficiency bonus is doubled for this skill, and you can take the hide action as a bonus action. Additionally making ranged attacks while hidden only reveals your location if the attacks hit.</p>",
+			"skill_proficiencies": ["stealth"],
+			"gain_expertise_if_proficient": true
+		}
+	]
+}

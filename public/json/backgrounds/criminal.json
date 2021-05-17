@@ -1,0 +1,38 @@
+{
+	"injury_dc": 7,
+	"skills": ["intimidation", "deception", "hacking", "sleight_of_hand", "performance", "sense_motive", "streetwise", "presence"],
+	"wage": {
+		"die_roll": "2d4",
+		"multiplier": 8000
+	},
+	"roles": ["Muscle", "Smuggler", "Thief"],
+	"parting_gifts": [
+		{
+			"type": "money",
+			"price": 10000
+		},
+		{
+			"type": "money",
+			"price": 20000
+		},
+		{
+			"type": "weapon",
+			"name": "21st_century_pistol"
+		},
+		{
+			"type": "weapon",
+			"name": "vibroknife"
+		},
+		{
+			"type": "gear",
+			"name": "crowbar"
+		},
+		{
+			"type": "gear",
+			"name": "firebomb"
+		}
+	],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [35000,55000,75000,95000,30000]
+}

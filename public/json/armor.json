@@ -1,0 +1,194 @@
+{
+	"padded_jacket": {
+		"name": "Padded Jumpsuit",
+		"category": "light",
+		"price": 5000,
+		"base_ac": 11,
+		"strength_req": 0,
+		"stealth_disadvantage": true,
+		"resistances": [],
+		"weight": 7
+	},
+	"tough_leather_jacket": {
+		"name": "Tough Leather Jacket",
+		"category": "light",
+		"price": 10000,
+		"base_ac": 11,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [],
+		"weight": 10
+	},
+	"za_korp_kevlar_jacket": {
+		"name": "ZA Korp Kevlar Jacket",
+		"category": "light",
+		"price": 15000,
+		"base_ac": 11,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 2
+		}],
+		"weight": 12
+	},
+	"kevlar_jacket": {
+		"name": "Kevlar Jacket",
+		"category": "light",
+		"price": 45000,
+		"base_ac": 12,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 2
+		}],
+		"weight": 13
+	},
+	"concealable_ballistic_vest": {
+		"name": "Concealable Ballistic Vest",
+		"category": "light",
+		"price": 50000,
+		"base_ac": 13,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 2
+		}],
+		"weight": 13
+	},
+	"kevlar_bodysuit": {
+		"name": "Kevlar Bodysuit",
+		"category": "medium",
+		"price": 30000,
+		"base_ac": 12,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 2
+		}],
+		"weight": 18
+	},
+	"heavy_concealable_vest": {
+		"name": "Heavy Concealable Vest",
+		"category": "medium",
+		"price": 50000,
+		"base_ac": 13,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 3
+		}],
+		"weight": 20
+	},
+	"standard_ballistic_vest": {
+		"name": "Standard Ballistic Vest",
+		"category": "medium",
+		"price": 50000,
+		"base_ac": 14,
+		"strength_req": 0,
+		"stealth_disadvantage": true,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 3
+		}],
+		"weight": 45
+	},
+	"light_duty_vest": {
+		"name": "Light Duty Vest",
+		"category": "medium",
+		"price": 400000,
+		"base_ac": 14,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 3
+		}],
+		"weight": 20
+	},
+	"tactical_vest": {
+		"name": "Tactical Vest",
+		"category": "medium",
+		"price": 750000,
+		"base_ac": 15,
+		"strength_req": 10,
+		"stealth_disadvantage": true,
+		"resistances": [{
+			"type": "ballistic"
+		}],
+		"weight": 40
+	},
+	"tce_body_armor": {
+		"name": "TCE Body Armor",
+		"category": "heavy",
+		"price": 30000,
+		"base_ac": 14,
+		"strength_req": 0,
+		"stealth_disadvantage": true,
+		"resistances": [{
+			"type": "ballistic",
+			"dr": 3
+		}],
+		"weight": 40
+	},
+	"za_korp_armor": {
+		"name": "ZA Korp Armor",
+		"category": "heavy",
+		"price": 75000,
+		"base_ac": 15,
+		"strength_req": 10,
+		"stealth_disadvantage": true,
+		"resistances": [{
+			"type": "ballistic"
+		}],
+		"weight": 55
+	},
+	"military_police_armor": {
+		"name": "Military Police Armor",
+		"category": "heavy",
+		"price": 200000,
+		"base_ac": 17,
+		"strength_req": 13,
+		"stealth_disadvantage": true,
+		"resistances": [{
+			"type": "ballistic"
+		}],
+		"weight": 60
+	},
+	"battle_armor": {
+		"name": "Battle Armor",
+		"category": "heavy",
+		"price": 150000,
+		"base_ac": 18,
+		"strength_req": 14,
+		"stealth_disadvantage": true,
+		"resistances": [{
+			"type": "ballistic"
+		}],
+		"weight": 65
+	},
+	"light_helmet": {
+		"name": "Light Helmet",
+		"category": "helmet",
+		"price": 15000,
+		"base_ac": 1,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [],
+		"weight": 4
+	},
+	"helmet": {
+		"name": "Helmet",
+		"category": "helmet",
+		"price": 30000,
+		"base_ac": 2,
+		"strength_req": 0,
+		"stealth_disadvantage": false,
+		"resistances": [],
+		"weight": 5
+	}
+}

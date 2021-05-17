@@ -1,0 +1,56 @@
+{
+	"chefs_kit": {
+		"name": "Chef's Kit",
+		"cost": 3000,
+		"weight": 8,
+		"description": "This kit contains all the utensils that you need to cook any number of meals for up to six people at a time. Contained within are pots, pans, ladles, a miniature gas stove, and a lighter."
+	},
+	"disarming_kit": {
+		"name": "Disarming Kit",
+		"cost": 2000,
+		"weight": 2,
+		"description": "This set of tools includes a small file, a small mirror mounted on a metal handle, a set of narrow-bladed scissors, a voltage checker, and a pair of pliers. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to disarm traps."
+	},
+	"disguise_kit": {
+		"name": "Disguise Kit",
+		"cost": 2000,
+		"weight": 3,
+		"description": "This pouch of cosmetics, hair dye, and small props lets you create disguises that change your physical appearance. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a visual disguise."
+	},
+	"first_aid_kit": {
+		"name": "First Aid Kit",
+		"cost": 5000,
+		"weight": 1,
+		"description": "A small bag of essential first aid gear such as bandages, plasters, and hyposprays. You can use the first aid kit 10 times before needing to replace it. As an action, you can expend one use of the kit to instantly stabilize a biological creature (including synths) that has 0 Hit Points."
+	},
+	"forgery_kit": {
+		"name": "Forgery Kit",
+		"cost": 1000,
+		"weight": 5,
+		"description": "This small metal box contains a variety of blank plastic chips, ID templates, pens and a very small printing device, among other supplies necessary to create convincing forgeries of physical documents. Proficiency with this kit lets you add your proficiency bonus to any ability checks you make to create a physical forgery of a document."
+	},
+	"gambling_set": {
+		"name": "Gambling Set",
+		"cost": 10,
+		"weight": 0.5,
+		"description": "A gambling set encompasses a wide range of game pieces, including dice and decks of cards. If you are proficient with a gambling set, you can add your proficiency bonus to ability checks you make to play a game with that set."
+	},
+	"hackers_device": {
+		"name": "Hacker's Device",
+		"cost": 5000,
+		"weight": 0.5,
+		"description": "This is a small handheld device designed specifically to interface with almost all ports and technology currently on the market. Proficiency with this device allows you to add your proficiency bonus to any ability checks you make to hack electronic locks."
+	},
+	"lock_picks": {
+		"name": "Lock Picks",
+		"cost": 2000,
+		"weight": 1,
+		"description": "This set of tools includes a small file, and a set of lock picks. Proficiency with these tools lets you add your proficiency bonus to any ability checks you make to open traditional locks."
+	},
+	"repair_tools": {
+		"name": "Repair Tools",
+		"cost": 5000,
+		"weight": 10,
+		"description": "Contained within are the tools required to repair basic technology and equipment. You may repair a damaged engine on a vehicle, fix a broken cybernetic part, or even attempt to install cybernetics."
+	}
+}

@@ -1,0 +1,51 @@
+{
+	"name": "Cybersurgeon",
+	"class_features": [
+		{
+			"name": "Boosted Healing",
+			"type": "passive",
+			"level": 1,
+			"description": "<p>When using your Basic Healing ability, the creature regains a number of hit points equal to 2d8 + your Tec ability.</p>"
+		},
+		{
+			"name": "Bedside Manner: Skills",
+			"type": "skill_proficiency",
+			"level": 1,
+			"num_skills": 2,
+			"skill_list": ["bureaucracy", "investigation", "persuasion", "presence", "sense_motive"]
+		},
+		{
+			"name": "Bedside Manner: Language",
+			"type": "language_proficiency",
+			"level": 1,
+			"languages": ["choice"]
+		},
+		{
+			"name": "Touch of Respite",
+			"type": "action",
+			"level": 3,
+			"uses": {
+				"dependent_on": "technology",
+				"num_uses": [0,0,0,1,2,3,4,5],
+				"recharge": "long_rest"
+			},
+			"description": "<p>As an action you are able to touch a willing creature and either cure them of one disease, or give them five temporary hit points. The temporary hit points last for 1 hour, or until they are depleted. You may use this ability a number of times equal to your Tec modifier. You regain all expended uses at the end of a Long Rest.</p>"
+		},
+		{
+			"name": "Cybernetics Specialists",
+			"type": "passive",
+			"level": 6,
+			"description": "<p>Whenever you restore hit points to a creature that has tier 1 or above cybernetic implants they regain additional hit points equal to the number of those implants.</p>"
+		},
+		{
+			"name": "Multiprocess Cybernetic Treatment",
+			"type": "action",
+			"description": "<p>As an action choose up to six creatures in a 30ft radius. Each target regains hit points equal to 3d8 + your Tec ability modifier. You may use this feature once per long rest.</p>",
+			"uses": {
+				"dependent_on": "none",
+				"num_uses": 1,
+				"recharge": "long_rest"
+			}
+		}
+	]
+}

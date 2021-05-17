@@ -1,0 +1,82 @@
+{
+	"hit_dice": "1d8",
+	"armor_proficiencies": [{"category": "light"}, {"category": "helmet"}],
+	"weapon_proficiencies": [
+		{"category": "melee"},
+		{"category": "pistols"},
+		{"category": "submachine_guns"},
+		{"category": "shotguns"}
+	],
+	"saving_throws": ["mind"],
+	"num_skills": 3,
+	"skill_list": ["computing", "hacking", "medicine", "sense_motive", "stealth", "vehicles_aircraft", "vehicles_land"],
+	"class_features": [{
+		"name": "Exploits",
+		"level": 1,
+		"type": "exploits",
+		"known": {
+			"dependent_on": "level",
+			"num_known": [2,3,3,4,5,5,6,6,8,9]
+		},
+		"uses": {
+			"dependent_on": "level",
+			"num_uses": [3,4,4,5,5,6,6,7,7,10]
+		},
+		"ability": "technology",
+		"description": "<p>Starting at 1st level, you are able to perform exploits using available botnets. These exploits are a special kind of hack that you can perform to gain some kind of advantage over your enemies or environment.</p> <p>As you grow in knowledge, you are able to control more botnets at any one time, as represented by your ‘botnets useable’ column. Once you have used a botnet to carry out an exploit, the devices on that botnet are burned out, and you must use a long rest to create more botnets to replace the ones you lose.</p> <p>Some exploits require a saving throw from those affected. The saving throw for your exploits is 8 + your Proficiency bonus + your Tec modifier.</p>"
+	}, {
+		"name": "Healing",
+		"type": "action",
+		"level": 1,
+		"uses": {
+			"determined_by": "none",
+			"num_uses": 2,
+			"recharge": "short_rest"
+		},
+		"die_roll": "1d8",
+		"ability": "technology"
+	}, {
+		"name": "Redistribution",
+		"type": "reaction",
+		"level": 2,
+		"description": "<p>At 2nd level, as a reaction, when you or an ally that you can see rolls damage for an attack that hits, you can add any of your unused hit dice to the damage roll. Adding your hit dice to the damage roll spends those hit dice.</p>"
+	}, {
+		"name": "Character Improvement",
+		"level": 4,
+		"type": "asi",
+		"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+		"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]	
+	}, {
+		"name": "Exploit Upgrade",
+		"level": 5,
+		"type": "passive",
+		"description": "<p>Starting at level 5, the exploits that you know become more powerful. You can use the upgraded version of the exploits you know."
+	}, {
+		"name": "Universal Training",
+		"level": 6,
+		"type": "half_skill_proficiency",
+		"description": "<p>You can add half your Proficiency bonus, rounded down, to any ability check you make that doesn’t already include your Proficiency bonus.</p>",
+		"all_skills": true
+	}, {
+		"name": "Rapid Reset",
+		"type": "passive",
+		"description": "<p>Starting at 7th level you are immune to the Ghosted condition and you gain advantage on saving throws against effects that target your augmentations.</p>"
+	}, {
+		"name": "Character Improvement",
+		"level": 8,
+		"type": "asi",
+		"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+		"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]	
+	}, {
+		"name": "Exploit Mastery",
+		"level": 9,
+		"type": "expert_exploits",
+		"description": "<p>You are a master of exploits and gain access to expert exploits. You may now consider expert exploits as options when learning new exploits.</p>",
+		"access_to_all": true
+	}],
+	"subclasses": {
+		"name": "Specialty",
+		"level": 3,
+		"classes": ["combat_hacker", "robomancer"]
+	}
+}
