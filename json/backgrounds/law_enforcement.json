@@ -1,0 +1,38 @@
+{
+	"injury_dc": 7,
+	"skills": ["intimidation", "tracking", "perception", "athletics", "vehicles_land", "investigation", "streetwise", "presence"],
+	"wage": {
+		"die_roll": "3d4",
+		"multiplier": 8000
+	},
+	"roles": ["Detective", "Desk Jockey", "Vice"],
+	"parting_gifts": [
+		{
+			"type": "weapon",
+			"name": "heavy_pistol"
+		},
+		{
+			"type": "money",
+			"price": 30000
+		},
+		{
+			"type": "gear",
+			"name": "holster_one_handed"
+		},
+		{
+			"type": "weapon",
+			"name": "stun_baton"
+		},
+		{
+			"type": "gear",
+			"name": "pocket_computer"
+		},
+		{
+			"type": "armor",
+			"name": "tough_leather_jacket"
+		}
+	],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [35000,55000,75000,95000,30000]
+}

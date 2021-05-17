@@ -1,0 +1,24 @@
+{
+	"name": "Combat Hacker",
+	"class_features": [
+		{
+			"name": "Fighting Style",
+			"level": 3,
+			"type": "fighting_style",
+			"description": "<p>You adopt a particular style of fighting as your specialty. Choose a fighting style from the list of optional features. You can’t take the same Fighting Style option more than once, even if you get to choose again.</p>",
+			"options": ["marksman", "defensive", "point_blank_shooter"]
+		},
+		{
+			"name": "Extra Attack",
+			"level": 5,
+			"type": "passive",
+			"description": "<p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>"
+		},
+		{
+			"name": "Neurotoxic Weapons",
+			"type": "passive",
+			"level": 10,
+			"description": "<p>You have learned to treat your weapons with a special chemical designed to disconnect a creature from its neural augmentation. Beginning at 10th level you deal an additional 1d6 psychic damage to the first creature you hit with a melee or ranged weapon attack a turn.</p>"
+		}
+	]
+}

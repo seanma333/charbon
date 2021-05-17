@@ -1,0 +1,75 @@
+{
+	"hit_dice": "1d12",
+	"armor_proficiencies": [{"category": "medium"}, {"category": "heavy"}],
+	"weapon_proficiencies": [
+		{"category": "melee"},
+		{"category": "pistols"},
+		{"category": "submachine_guns"},
+		{"category": "shotguns"},
+		{"category": "heavy_weapons"}
+	],
+	"saving_throws": ["fortitude"],
+	"num_skills": 2,
+	"skill_list": ["athletics", "intimidation", "perception", "persuasion", "presence", "vehicles_aircraft", "vehicles_land"],
+	"class_features": [
+		{
+			"name": "Fury",
+			"level": 1,
+			"type": "bonus_action",
+			"uses": {
+				"determined_by": "level",
+				"num_uses": [2,2,3,3,3,4,4,4,4,4],
+				"recharge": "long_rest"
+			},
+			"description": "<p>In battle, you fight with primal ferocity. On your turn, you can enter a fury as a bonus action.</p> <p>While in a fury, you gain the following benefits:</p> <ul><li> You have advantage on Strength checks and Fortitude saving throws.</li> <li>When you make a weapon attack using Strength, you gain a +2 bonus to the damage roll. This bonus increases to +3 at level 9.</li> <li>You have resistance to bludgeoning, piercing, and slashing damage.</li> </u> <p>Your fury lasts for one minute. It ends early if you are knocked unconscious, or if your turn ends and you haven’t attacked a hostile creature or taken damage since your last turn. You can also end your fury on your turn as a bonus action.</p> <p>Once you spend the maximum number of furies for your daimyo level, you must finish a long rest before you can engage fury again.</p>"
+		},
+		{
+			"name": "Danger Sense",
+			"level": 2,
+			"type": "passive",
+			"description": "<p>At 2nd level, you gain an uncanny sense of nearby threats. You have advantage on Reflex saving throws against effects that you can see, such as traps and explosions. To gain this benefit, you cannot be blinded, deafened, or incapacitated.</p>"
+		},
+		{
+			"name": "Character Improvement",
+			"level": 4,
+			"type": "asi",
+			"description": "<p>you can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+			"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+		},
+		{
+			"name": "Extra Attack",
+			"level": 5,
+			"type": "passive",
+			"description": "<p>At 2nd level, you gain an uncanny sense of nearby threats. You have advantage on Reflex saving throws against effects that you can see, such as traps and explosions. To gain this benefit, you cannot be blinded, deafened, or incapacitated.</p>"
+		},
+		{
+			"name": "Keep Your Head",
+			"level": 7,
+			"type": "passive",
+			"description": "<p>Allies within 60ft. of you have advantage on savings throws against being ghosted.</p>"
+		},
+		{
+			"name": "Character Improvement",
+			"level": 8,
+			"type": "asi",
+			"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+			"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+		},
+		{
+			"name": "Unstoppable",
+			"level": 9,
+			"type": "resource",
+			"uses": {
+				"determined_by": "none",
+				"num_uses": 1,
+				"recharge": "long_rest"
+			},
+			"description": "<p>You are a juggernaut on the battlefield stopping at nothing to obtain victory. Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest.</p>"
+		}
+	],
+	"subclasses": {
+		"name": "Daimyo Focus",
+		"level": 3,
+		"classes": ["sugo", "sengoku"]
+	}
+}

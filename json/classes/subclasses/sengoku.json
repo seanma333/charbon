@@ -1,0 +1,29 @@
+{
+	"name": "Sengoku",
+	"description": "<p>The sugo is the real deal when it comes to taking damage. It’s as if they don’t feel pain the same way as normal people.</p>",
+	"class_features": [
+		{
+			"name": "Superheated Weaponry",
+			"type": "passive",
+			"level": 3,
+			"description": "<p>While using fury, once per turn when you hit a creature with a ranged weapon attack you can deal an additional 1d6 damage (same damage type) to the target.</p>"
+		},
+		{
+			"name": "Heavy Gunner",
+			"type": "bonus_action",
+			"level": 6,
+			"uses": {
+				"dependent_on": "people",
+				"num_uses": [0,0,0,1,2,3,4,5],
+				"recharge": "long_rest"
+			},
+			"description": "<p>As a bonus action you may choose to ignore damage reduction of armor when firing a heavy weapon. You may use this a number of times per day equal to your People modifier. You regain all expended uses of this ability at the end of a long rest.</p>"
+		},
+		{
+			"name": "Walking Platform",
+			"type": "passive",
+			"level": 10,
+			"description": "<p>You ignore penalties of long range and all cover except total cover when firing a heavy weapon.</p>"
+		}
+	]
+}

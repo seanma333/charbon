@@ -1,0 +1,38 @@
+{
+	"injury_dc": 6,
+	"skills": ["performance", "presence", "gambling", "acrobatics", "sense_motive", "bureaucracy", "religion", "streetwise"],
+	"wage": {
+		"die_roll": "3d4",
+		"multiplier": 6000
+	},
+	"roles": ["Bartender", "Dancer", "Gambler"],
+	"parting_gifts": [
+		{
+			"type": "money",
+			"price": 50000
+		},
+		{
+			"type": "gear",
+			"price": "comms_implant"
+		},
+		{
+			"type": "gear",
+			"name": "clothes_wealthy"
+		},
+		{
+			"type": "gear",
+			"name": "drink_bottle"
+		},
+		{
+			"type": "gear",
+			"name": "mirror_steel"
+		},
+		{
+			"type": "money",
+			"name": "20000"
+		}
+	],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [25000,45000,65000,85000,30000]
+}

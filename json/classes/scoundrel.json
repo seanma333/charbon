@@ -1,0 +1,95 @@
+{
+	"hit_dice": "1d8",
+	"armor_proficiencies": [{"category": "light"}, {"category": "medium"}],
+	"weapon_proficiencies": [
+		{"category": "melee"},
+		{"category": "pistols"},
+		{"category": "submachine_guns"},
+		{"category": "shotguns"}
+	],
+	"saving_throws": ["reflex"],
+	"num_skills": 3,
+	"skill_list": [
+		"acrobatics",
+		"athletics",
+		"deception",
+		"hacking",
+		"investigation",
+		"perception",
+		"performance",
+		"persuasion",
+		"religion",
+		"sense_motive",
+		"sleight_of_hand",
+		"stealth"],
+	"class_features": [
+		{
+			"name": "Cunning Action",
+			"type": "bonus_action",
+			"level": 1,
+			"description": "<p>You can take a bonus action on each of your turns to Dash, Disengage, or Hide.</p>"
+		},
+		{
+			"name": "Sneak Attack",
+			"type": "triggered",
+			"level": 1,
+			"die_roll": {
+				"dependent_on": "level",
+				"value": ["1d6","1d6","2d6","2d6","3d6","3d6","4d6","4d6","5d6","5d6"]
+			},
+			"description": "<p>Beginning at 1st level, you know how to strike subtly and exploit a foe’s distraction. Once per turn, you can deal an extra 1d6 damage to one creature you hit with an Attack if you have advantage on the Attack roll. The Attack must use a Finesse or a ranged weapon.</p> <p>You don’t need advantage on the Attack roll if another enemy of the target is within 5 feet of it, that enemy isn’t Incapacitated, and you don’t have disadvantage on the Attack roll.</p>"
+		},
+		{
+			"name": "Expertise",
+			"type": "expertise",
+			"level": 2,
+			"description": "<p>Choose two of your skill proficiencies, or one of your skill proficiencies and one of your tools proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.</p>",
+			"num_skills": 2
+		},
+		{
+			"name": "Character Improvement",
+			"level": 4,
+			"type": "asi",
+			"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+			"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+		},
+		{
+			"name": "Uncanny Dodge",
+			"level": 5,
+			"type": "reaction",
+			"description": "<p>Starting at 5th level, when an attacker that you can see hits you with an Attack, you can use your reaction to halve the attack’s damage against you.</p>"
+		},
+		{
+			"name": "Character Improvement",
+			"level": 6,
+			"type": "asi",
+			"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+			"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+		},
+		{
+			"name": "Expertise",
+			"type": "expertise",
+			"level": 7,
+			"description": "<p>Choose two of your skill proficiencies, or one of your skill proficiencies and one of your tools proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.</p>",
+			"num_skills": 2
+		},
+		{
+			"name": "Character Improvement",
+			"level": 8,
+			"type": "asi",
+			"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+			"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+		},
+		{
+			"name": "Evasion",
+			"level": 9,
+			"type": "passive",
+			"description": "When you are subjected to an effect that allows you to make a reflex saving throw to take only half damage, you instead take no damage if you succeed on the saving throw, and only half damage if you fail."
+		}
+	],
+	"subclasses": {
+		"name": "Scoundrel Archetype",
+		"level": 3,
+		"classes": ["troublemaker", "stuntman", "smuggler"]
+	}
+}

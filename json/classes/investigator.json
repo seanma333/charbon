@@ -1,0 +1,89 @@
+{
+	"hit_dice": "1d8",
+	"armor_proficiencies": [{"category": "light"}, {"category": "medium"}],
+	"weapon_proficiencies": [
+		{"category": "melee"},
+		{"category": "pistols"},
+		{"category": "shotguns"}
+	],
+	"saving_throws": ["reflex"],
+	"num_skills": 4,
+	"skill_list": [
+		"athletics",
+		"bureaucracy",
+		"computing",
+		"deception",
+		"hacking",
+		"intimidation",
+		"investigation",
+		"perception",
+		"persuasion",
+		"sense_motive",
+		"sleight_of_hand",
+		"stealth",
+		"streetwise",
+		"tracking"],
+	"class_features": [
+		{
+			"name": "Nose for Trouble",
+			"type": "bonus_action",
+			"level": 1,
+			"description": "<p>At 1st level you may use your bonus action to determine a creature’s weaknesses and blind spots and broadcast this information to your allies. Choose a creature that you can see within 60ft. of you. The next time an ally makes an attack against that creature, they have advantage on the attack roll.</p>"
+		},
+		{
+			"name": "Watchful Eye",
+			"type": "passive",
+			"level": 1,
+			"description": "<p>You have honed your sense over countless investigations. Starting at 1st level you cannot gain disadvantage on investigating, perception or tracking checks that rely on sight unless blinded.</p>"
+		},
+		{
+			"name": "Expertise",
+			"type": "expertise",
+			"level": 2,
+			"description": "<p>Choose two of your skill proficiencies, or one of your skill proficiencies and one of your tools proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies.</p>",
+			"num_skills": 2
+		},
+		{
+			"name": "Character Improvement",
+			"level": 4,
+			"type": "asi",
+			"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+			"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+		},
+		{
+			"name": "Sharp Instincts",
+			"level": 5,
+			"type": "passive",
+			"description": "<p>At 5th level,you have advantage on reflex saving throws against attacks and effects that cause physical harm. Additionally creatures that are hidden from you do not gain advantage on attacks against you. To gain this effect you must not be incapacitated.</p>"
+		},
+		{
+			"name": "No Sleep and a Shot of Whiskey",
+			"level": 5,
+			"type": "passive",
+			"description": "You have learned to function off of the shortest rests before getting back to work. Also starting at 5th level you reduce the amount of sleep you need to complete a long rest to 4 hours a day. After resting in this way you gain the same benefit that anyone else does from 8 hours of sleep. Similarly you only need 10 minutes of rest to complete a short rest."
+		},
+		{
+			"name": "Deductive Reasoning",
+			"level": 7,
+			"type": "resource",
+			"uses": {
+				"dependent_on": "none",
+				"num_uses": 1,
+				"recharge": "short_rest"
+			},
+			"description": "<p>You have learned to work backwards through a crime scene making logical jumps that elude others. Starting at 7th level once per day you may make a DC 15 Mind saving throw about a crime or investigation. On a fail you stretch yourself too far and are stunned for 1 minute as your mind tries to calculate too many possibilities.</p> <p>On a successful save, you can ask the GM up to five questions. You must ask your questions within the next minute. The GM answers each question with one word, such as yes, no, maybe, never, irrelevant, unclear. If a one-word answer would be misleading, the GM might instead offer a short phrase as an answer. You regain this ability at the end of a long rest.</p>"
+		},
+		{
+			"name": "Character Improvement",
+			"level": 8,
+			"type": "asi",
+			"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+			"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+		}
+	],
+	"subclasses": {
+		"name": "Investigative Archetype",
+		"level": 3,
+		"classes": ["investigative_journalist", "private_investigator"]
+	}
+}

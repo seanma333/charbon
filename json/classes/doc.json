@@ -1,0 +1,106 @@
+{
+	"hit_dice": "1d8",
+	"armor_proficiencies": [{"category": "light"}, {"category": "medium"}, {"category": "helmet"}],
+	"weapon_proficiencies": [
+		{"category": "melee"},
+		{"category": "pistols"},
+		{"category": "submachine_guns"},
+		{"category": "shotguns"}
+	],
+	"saving_throws": ["mind"],
+	"num_skills": 3,
+	"skill_list": ["bureaucracy", "gambling", "history", "mechanics", "medicine", "perception", "persuasion", "religion", "sense_motive"],
+	"class_features": [{
+		"name": "Medical Implant: Basic Healing",
+		"type": "action",
+		"level": 1,
+		"uses": {
+			"determined_by": "none",
+			"recharge": "short_rest",
+			"num_uses": 2
+		},
+		"die_roll": {
+			"determined_by": "none",
+			"value": "1d8"
+		},
+		"ability": "technology",
+		"description": "<p>Using an action you touch a willing creature. That creature regains a number of hit points equal to 1d8 + your Tec modifier.</p> <p>You can use this ability twice before completing a short or long rest.</p>"
+	}, {
+		"name": "Medical Implant: Quick Heal",
+		"type": "bonus_action",
+		"level": 1,
+		"uses": {
+			"determined_by": "technology",
+			"recharge": "short_rest",
+			"num_uses": [2,2,2,3,4,5,6,7]
+		},
+		"die_roll": {
+			"determined_by": "none",
+			"value": "1d4"
+		},
+		"ability": "technology"
+	}, {
+		"name": "Cybernetics Expert",
+		"type": "bonus_action",
+		"level": 2,
+		"description": "<p>You can use a bonus action and expend one ‘part’ worth 100₩ to repair a single break or tear in an object that you are touching, such as a broken display, a severed cybernetic finger, or a smashed light. The break or tear may be no larger than 1 foot in any dimension for the repair to work.</p>"
+	}, {
+		"name": "Patch 'Em Up",
+		"type": "passive",
+		"level": 2,
+		"description": "<p>At the end of a short rest, each creature that you have shared the rest with may gain an additional 2d4 hit points.</p> <p>This healing increases to 3d4 at 8th level, to 4d4 at 10th level.</p>"
+	}, {
+		"name": "Expertise",
+		"type": "expertise",
+		"level": 3,
+		"description": "Choose two of your skill proficiencies, or one of your skill proficiencies and one of your tools proficiencies. Your proficiency bonus is doubled for any ability check you make that uses either of the chosen proficiencies."
+	}, {
+		"name": "Character Improvement",
+		"level": 4,
+		"type": "asi",
+		"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+		"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+	}, {
+		"name": "Long Ranged Strike",
+		"type": "attack",
+		"level": 5,
+		"description": "<p>As an action, you can shoot a beam of life draining energy from your palm. You are proficient in this attack. Make a ranged attack against a target within 150ft. On a hit, the target takes 3d10 radiation damage. You can use your medical implant this way three times before completing a long rest.</p>",
+		"ability": "technology",
+		"range": 150,
+		"damage": {
+			"die_roll": { "dependent_on": "none", "value": "3d10"},
+			"ability": "none",
+			"type": "radiation"
+		},
+		"uses": {
+			"dependent_on": "none",
+			"num_uses": 3,
+			"recharge": "long_rest"
+		}
+	}, {
+		"name": "Character Improvement",
+		"level": 8,
+		"type": "asi",
+		"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+		"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]
+	}, {
+		"name": "Line of Sight Stabilizers",
+		"level": 7,
+		"type": "action",
+		"uses": {
+			"dependent_on": "technology",
+			"num_uses": [1,1,1,1,2,3,4,5],
+			"recharge": "short_rest"
+		}
+	}, {
+		"name": "H.A.R.S. | Hyper Advanced Resuscitation Software",
+		"level": 9,
+		"type": "passive",
+		"description": "<p>You have learned to program nanobots that you can inject to save all but the most critically injured creatures.</p> <p>You may touch a creature tha has been dead for no longer than 10 minutes. The bots cost 20 000₩ of medical supplies per use, and the target returns to life with 1 hit point. This effect cannot return a creature to life that has died of old age, nor can it restore any missing body parts.</p>"
+	}],
+	"subclasses": {
+		"name": "Specialty",
+		"level": 1,
+		"classes": ["combat_medic", "cybersurgeon"]
+	}
+}

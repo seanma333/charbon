@@ -1,0 +1,41 @@
+{
+	"name": "Troublemaker",
+	"class_features": [
+		{
+			"name": "Bonus Proficiencies: Armor",
+			"type": "armor_proficiency",
+			"level": 3,
+			"armor_proficiencies": [{"category": "medium"}],
+			"description": "<p>You gain proficiency with medium armor.</p>"
+		},
+		{
+			"name": "Bonus Proficiencies: Weapons",
+			"type": "weapon_proficiency",
+			"level": 3,
+			"weapon_proficiencies": [{"category": "assault_rifles"}, {"category": "sniper_rifles"}, {"category": "combat_shotguns"}],
+			"description": "<p>You gain proficiency with assault rifles, sniper rifles, and combat shotguns.</p>"
+		},
+		{
+			"name": "Finish Him",
+			"type": "passive",
+			"level": 3,
+			"description": "You can make a Sneak Attack with any weapon in which you are proficient."
+		},
+		{
+			"name": "Kick'em Down",
+			"type": "passive",
+			"level": 7,
+			"description": "You no longer suffer penalties to make ranged attack rolls against prone targets."
+		},
+		{
+			"name": "Dirty Fighting",
+			"type": "triggered",
+			"level": 10,
+			"description": "<p>You fight dirty to keep yourself alive. Starting at 10th level whenever you hit with a melee attack the target of the attack must make a Fortitude save with a DC equal to 8+ your Proficiency Bonus + your Dexterity Modifier or they gain one of the following negative buffs of your choice.</p> <ul><li>They become stunned until the start of their next turn</li><li>They are blinded until the end of your next turn</li><li>They gain the poisoned condition for 1d4+1 rounds</li></ul>",
+			"saving_throw": {
+				"type": "fortitude",
+				"save_dc_ability": "dexterity"
+			}
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"name": "Rapid Deployment",
+	"class_features": [
+		{
+			"name": "Improved Critical",
+			"type": "critical_range",
+			"description": "<p>Your weapon attacks score a critical hit on a roll of 19 or 20</p>",
+			"critical_range": 19
+		},
+		{
+			"name": "Unparalleled Athleticism",
+			"type": "half_skill_proficiency",
+			"description": "<p>You can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn’t already use your proficiency bonus. In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier.</p>",
+			"all_skills": false,
+			"skills": ["athletics", "acrobatics", "intimidation", "sleight_of_hand", "stealth", "vehicles_land"]
+		},
+		{
+			"name": "Master Critical",
+			"type": "critical_multiplier",
+			"description": "<p>Whenever you score a critical hit, you deal 3x the damage, instead of 2x.</p>",
+			"critical_multiplier": 3
+		}
+	]
+}

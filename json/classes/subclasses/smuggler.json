@@ -1,0 +1,33 @@
+{
+	"name": "Smuggler",
+	"class_features": [
+		{
+			"name": "Shoot First",
+			"level": 3,
+			"type": "initiative_proficiency",
+			"description": "<p>At 3rd level when you chose this archetype, you gain proficiency with initiative. You add your proficiency modifier to any initiative rolls.</p>"
+		},
+		{
+			"name": "Run and Gun",
+			"level": 3,
+			"type": "passive",
+			"description": "<p>Starting at 3rd level, if you move at least 10 feet in any direction during your turn, you gain a +1 bonus to damage rolls until the start of your next turn.</p>"
+		},
+		{
+			"name": "Dodge and Weave",
+			"level": 7,
+			"type": "movement_boost",
+			"description": "<p>Starting at 7th level your movement speed increases by 5ft. Additionally if you take the dash action on your turn, until your next turn the next ranged attack roll made against you has disadvantage to hit.</p>",
+			"movement_boost": {
+				"dependent_on": "none",
+				"increase": 5
+			}
+		},
+		{
+			"name": "Expert Maneuvers",
+			"level": 10,
+			"type": "skill_proficiency",
+			"description": "<p>You know how to pilot practically anything. At 10th level you gain proficiency in Vehicles (Aircraft) and Vehicles (Land). Whilst piloting a vehicle you add your dexterity bonus to its armor class.</p> <p>If you already have proficiency in these skills, your proficiency bonus is doubled for them.</p>"
+		}
+	]
+}

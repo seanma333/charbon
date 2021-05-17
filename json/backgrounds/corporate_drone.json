@@ -1,0 +1,39 @@
+{
+	"injury_dc": 6,
+	"skills": ["persuasion", "deception", "hacking", "perception", "engineering", "sense_motive", "bureaucracy", "computing"],
+	"wage": {
+		"die_roll": "2d4",
+		"multiplier": 10000
+	},
+	"roles": ["Facility Manager", "IT support", "Office Worker"],
+	"parting_gifts": [
+		{
+			"type": "other",
+			"name": "Expensive Watch",
+			"price": 15000
+		},
+		{
+			"type": "money",
+			"price": 25000
+		},
+		{
+			"type": "gear",
+			"name": "comms_advanced"
+		},
+		{
+			"type": "gear",
+			"name": "nanopack"
+		},
+		{
+			"type": "gear",
+			"name": "pocket_computer"
+		},
+		{
+			"type": "gear",
+			"name": "clothes_average"
+		}
+	],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [30000,50000,70000,90000,30000]
+}

@@ -1,0 +1,29 @@
+{
+	"name": "Marine",
+	"class_features": [
+		{
+			"name": "Specialized Shooting",
+			"type": "weapon_specialization",
+			"level": 2,
+			"applied_to_weapons": [{"category": "choice"}],
+			"damage_boost": {
+				"dependent_on": "level",
+				"additional_damage": [0,1,1,2,2,3,3,4,4,5]
+			},
+			"description": "<p>Choose a weapon type to specialize in. When using a specialized weapon, you deal extra damage of the same type as the weapon, equal to half your level, rounded down.</p>"
+		},
+		{
+			"name": "Deadshot",
+			"type": "passive",
+			"level": 7,
+			"description": "<p>When you score a critical hit with your specialized weapon type, you do not need to roll damage dice and instead deal maximum damage.</p>"
+		},
+		{
+			"name": "Broad Firing Solution",
+			"type": "weapon_specialization_attack",
+			"level": 10,
+			"action_type": "bonus_action",
+			"description": "<p>Whenever you take the attack action using your specialized weapon type, you may make an additional attack as a bonus action using that weapon.</p>"
+		}
+	]
+}

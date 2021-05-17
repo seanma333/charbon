@@ -1,0 +1,40 @@
+{
+	"injury_dc": 7,
+	"skills": ["navigation", "tracking", "streetwise", "vehicles_aircraft", "vehicles_land", "mechanics", "engineering", "investigation"],
+	"wage": {
+		"die_roll": "2d4",
+		"multiplier": 15000
+	},
+	"roles": ["Pilot", "Scout", "Surveyor"],
+	"parting_gifts": [
+		{
+			"type": "money",
+			"price": 10000
+		},
+		{
+			"type": "income",
+			"name": "Colony Mine Share",
+			"income": 1000,
+			"period": "monthly"
+		},
+		{
+			"type": "money",
+			"price": 30000
+		},
+		{
+			"type": "gear",
+			"name": "clothes_wealthy"
+		},
+		{
+			"type": "gear",
+			"name": "energy_drink"
+		},
+		{
+			"type": "vehicle",
+			"name": "coupe"
+		}
+	],
+	"min_retirement_terms": 4,
+	"max_retirement_terms": 7,
+	"retirement_payouts": [40000,60000,80000,100000,30000]
+}

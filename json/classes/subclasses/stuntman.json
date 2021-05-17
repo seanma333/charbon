@@ -1,0 +1,29 @@
+{
+	"name": "Stuntman",
+	"class_features": [
+		{
+			"name": "Stunt Jump",
+			"type": "passive",
+			"level": 3,
+			"description": "<p>At 3rd level when you choose this archetype, jumping or falling through panes of glass no longer deals you damage, and additionally, any damage taken from jumping or falling out of windows is halved.</p>"
+		},
+		{
+			"name": "Stunt Shooting",
+			"type": "passive",
+			"level": 3,
+			"description": "<p>Starting at 3rd level, ranged attacks made while diving or falling have a higher chance to hit their targets. While jumping or falling, you have a +1 bonus to hit ranged attack rolls provided that you travel at least 5 feet during the jump or fall that turn.</p>"
+		},
+		{
+			"name": "Trained Jumping",
+			"type": "passive",
+			"level": 7,
+			"description": "<p>Starting at 7th level you are an expert at jumping and may use your dexterity ability score instead of your strength ability score when calculating jump distances.</p>"
+		},
+		{
+			"name": "Orbital Jump",
+			"type": "passive",
+			"level": 10,
+			"description": "<p>Starting at 10th level you are prepared to land in a situation and ready for the worst of falls. Any time you would take fall damage, reduce that damage by 100 points. Additionally whilst falling you are capable of taking the attack action as a reaction once per fall.</p>"
+		}
+	]
+}

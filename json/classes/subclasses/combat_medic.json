@@ -1,0 +1,50 @@
+{
+	"name": "Combat Medic",
+	"class_features": [
+		{
+			"name": "Bonus Proficiency: Armor",
+			"type": "armor_proficiency",
+			"level": 1,
+			"armor_proficiencies": [{"category": "heavy"}]
+		},
+		{
+			"name": "Bonus Proficiency: Weapons",
+			"type": "weapon_proficiency",
+			"level": 1,
+			"weapon_proficiencies": [{"category": "assault_rifles"}, {"category": "combat_shotguns"}]
+		},
+		{
+			"name": "Distraction",
+			"type": "reaction",
+			"level": 1,
+			"uses": {
+				"dependent_on": "technology",
+				"num_uses": [0,0,0,1,2,3,4,5],
+				"recharge": "long_rest"
+			},
+			"description": "<p>When you or an ally are attacked by a creature that you can see within 30 ft of you, you can use your reaction to impose disadvantage on the attack roll.</p>"
+		},
+		{
+			"name": "Precision Aiming",
+			"type": "triggered",
+			"level": 3,
+			"uses": {
+				"dependent_on": "none",
+				"num_uses": 1,
+				"recharge": "short_rest"
+			},
+			"description": "<p>You can focus all you know about medicine and engineering to deal extra damage to vulnerable parts of your target. When you hit with an attack you automatically deal maximum damage for that attack. Once you use this ability, you must finish a short or long rest before you can use it again.</p>"
+		},
+		{
+			"name": "Head Down, Hard at Work",
+			"type": "passive",
+			"level": 6,
+			"description": "<p>When behind any cover, if you take the Dodge action or spend your action healing another creature you count as being in total cover until the end of your next turn.</p>"
+		},
+		{
+			"name": "Defensive Combat Experience",
+			"type": "bonus_action",
+			"description": "<p>You can take a bonus action on each of your turns to Dash, Dodge, Disengage, or Hide.</p>"
+		}
+	]
+}

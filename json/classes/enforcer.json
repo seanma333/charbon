@@ -1,0 +1,80 @@
+{
+	"hit_dice": "1d10",
+	"armor_proficiencies": [{"category": "light"}, {"category": "medium"}, {"category": "heavy"}, {"category": "helmet"}],
+	"weapon_proficiencies": [
+		{"category": "melee"},
+		{"category": "pistols"},
+		{"category": "submachine_guns"},
+		{"category": "shotguns"},
+		{"category": "assault_rifles"},
+		{"category": "sniper_rifles"},
+		{"category": "combat_shotguns"},
+		{"category": "heavy_weapons"},
+		{"category": "grenades"}
+	],
+	"saving_throws": ["fortitude"],
+	"num_skills": 2,
+	"skill_list": ["acrobatics", "athletics", "intimidation", "navigation", "perception", "sense_motive", "vehicles_land"],
+	"class_features": [{
+		"name": "Fighting Style",
+		"level": 1,
+		"type": "fighting_style",
+		"description": "<p>You adopt a particular style of fighting as your specialty. Choose a fighting style from the list of optional features. You can’t take the same Fighting Style option more than once, even if you get to choose again.</p>",
+		"options": ["marksman", "defensive", "dueling", "heavy_weapon_specialist", "two_weapon_fighting", "point_blank_shooter"]
+	}, {
+		"name": "Second Wind",
+		"type": "bonus_action",
+		"level": 1,
+		"uses": {
+			"determined_by": "none",
+			"num_uses": 1,
+			"recharge": "short_rest"
+		},
+		"recharge": "short_rest",
+		"die_roll": "1d10",
+		"ability": "level"
+	}, {
+		"name": "Action Surge",
+		"type": "resource",
+		"level": 3,
+		"uses": {
+			"determined_by": "none",
+			"num_uses": 1,
+			"recharge": "short_rest"
+		},
+		"description": "<p>On your turn, you can take one additional action on top of your regular action and a possible bonus action.</p> <p>Once you use this feature, you must finish a short or long rest before you can use it again.</p>"
+	}, {
+		"name": "Character Improvement",
+		"level": 4,
+		"type": "asi",
+		"description": "<p>you can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+		"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]	
+	}, {
+		"name": "Extra Attack",
+		"level": 5,
+		"type": "passive",
+		"description": "<p>Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn.</p>"
+	}, {
+		"name": "Character Improvement",
+		"level": 6,
+		"type": "asi",
+		"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+		"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]	
+	}, {
+		"name": "Character Improvement",
+		"level": 8,
+		"type": "asi",
+		"description": "<p>You can increase one ability score of your choice by 2, or two ability scores by 1.</p>",
+		"ability_score_increase": [{"ability": "choice", "increase": 1}, {"ability": "choice", "increase": 1}]	
+	}, {
+		"name": "Tough to Kill",
+		"level": 9,
+		"type": "passive",
+		"description": "<p>Starting at 9th level, you are determined to stay alive no matter what happens. If you are reduced to 0 hit points or are killed outright, you can make a DC 10 Fortitude saving throw. On a success you regain 1 hit point and consciousness. Once you have used this feature you must complete a long rest before you are able to do so again.</p>"
+	}],
+	"subclasses": {
+		"name": "Combat Archetype",
+		"level": 2,
+		"classes": ["rapid_deployment", "marine", "street_samurai"]
+	}
+}

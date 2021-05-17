@@ -1,0 +1,21 @@
+{
+	"name": "Gutter Punk",
+	"description": "<p>Gutter punks are part of an anti-social movement that rejects mainstream society and attempts to emulate their version of the punk movement from centuries past.</p> <p>Inspired by the punk rockers of history, gutter punks often wear ragged clothing consisting of torn pants, loose-fitting shirts, and sleeveless leather or jean jackets. Their jackets are decorated by themselves or their gang members using paint or markers. They favor spiked or studded embellishments and wear outlandish hairstyles and brightly painted augmentations designed to draw maximum attention.</p> <p>Gutter punks mostly live in slums or abandoned buildings alongside their fellows. Their counter culture ideals put them at odds with most authority figures, making honest work scarce, which in turn makes it hard for them to escape poverty.</p>",
+	"feature_descriptions": {
+		"Shotgunners": "You are proficient with the combat shotgun.",
+		"Adaptive": "You may pick one skill of your choice to be proficient in.",
+		"Misspent Youth": "You begin with Influence: Street 3."
+	},
+	"ability_score_increase": [{"ability": "dexterity", "increase": 2}, {"ability": "constitution", "increase": 1}],
+	"speed": 35,
+	"age": {
+		"base": 18,
+		"middle": 38,
+		"old": 68,
+		"ancient": 80
+	},
+	"weapon_proficiencies": [{"category": "combat_shotgun"}],
+	"skill_proficiencies": [{"skill": "choice", "expertise": false}],
+	"influence": {"street": 3},
+	"languages": ["english", "choice", "choice"]
+}

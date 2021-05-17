@@ -1,0 +1,49 @@
+{
+	"name": "Synth",
+	"description": "<p>You were manufactured by one of the large robotics corporations using a combination of biological and robotic components. Then they added advanced AI inside a robotic brain. You are physically indistinguishable from a real human aside from identical bar codes under each eyelid.</p> <p>Synths were first created off-world in 2130. Those created from this first batch are very rare and are the oldest known of their kind at 55 years old.</p>",
+	"ability_score_increases": [{"ability": "constitution", "increase": 2}],
+	"speed": 30,
+	"age": {
+		"base": 0,
+		"middle": 16,
+		"old": 45,
+		"ancient": 55
+	},
+	"feature_descriptions": [{
+		"Bioenhanced": "You have advantage on checks made to avoid disease",
+		"Recharge": "Instead of regular sleep, your enhancements allow you to sleep for just 4 hours a day and still gain the benefits of an 8 hour rest. Your AI produces the illusion of dreams for you in this state, usually of robot sheep.",
+		"Composite Weaving": "Your skin and muscles are interwoven with high strength composite materials, granding you a natural armor of 13+your Dexterity modifier. Even when wearing armor your AC cannot be any lower than that of your natural armor."
+	}],
+	"base_armor": 13,
+	"languages": ["english", "choice"],
+	"suborigins": [
+		{
+			"name": "Manufacturer: Houston Dynamics M. IV",
+			"description": "For those who need more sophisticated security than a standard mech, Houston Dynamics offers the MK. IV Personal Security Synth.",
+			"ability_score_increases": [{"abiilty": "dexterity", "increase": 1}],
+			"climb_speed": 30,
+			"weapon_proficiencies": [{"category": "assault_rifles"}],
+			"feature_descriptions": {
+				"Advantageous Positioning": "You have a climb speed of 30 ft.",
+				"Memory Implant": "You are proficient with assault rifles."
+			} 
+		},
+		{
+			"name": "Shenzhen Solutions Paramour",
+			"description": "The Paramour by Shenzhen Solutions makes the ideal host, counter intelligence asset, or personal companion.",
+			"ability_score_increases": [{"ability": "people", "increase": 1}],
+			"feature_descriptions": {
+				"Inbuilt Charm": "You have advantage on People (Persuasion) checks made to flatter, charm, or seduce."
+			}
+		},
+		{
+			"name": "Visser Robotics Advanced Synth",
+			"description": "The Advanced Synth by Visser Robotics was designed to work in the colonies as cheap labor. They have enhanced strength and night vision.",
+			"ability_score_increases": [{"ability": "strength", "increase": 1}],
+			"darkvision": 120,
+			"feature_descriptions": {
+				"Night Vision": "You can see in dim light as if it were bright light, and darkness as if it were dim light up to a distance of 120ft."
+			}
+		}
+	]
+}
