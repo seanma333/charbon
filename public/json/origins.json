@@ -1,0 +1,684 @@
+{
+    "badlander": {
+        "description": "<p>A badlander hails from the outskirts of civilization, in the mostly uninhabited, heavily polluted areas outside of the megacities. They grow up in the dusty, dirty, violent wilds, where death and desolation are just parts of everyday life.</p> <p>Badlanders are typically born to parents who once lived in the cities, but due to financial problems, were forced to move away from the safety of the city streets and try their luck in the radiated wilderness.</p> <p>Badlander clothing and housing is made from garbage dumped in the wilds by the megacity trash collectors.</p> <p>The ability to reuse and recycle waste into some thing of use is very common among badlanders.</p>",
+        "features": [
+            {
+                "ability_score_increase": [
+                    {
+                        "ability": "dexterity",
+                        "increase": 1
+                    }
+                ],
+                "description": "<p>It is important to have quick reactions, and steady feet in the badlands. Your Dexterity score increases by 1.</p>",
+                "name": "Ability Score Increase",
+                "types": [
+                    "asi"
+                ]
+            },
+            {
+                "age": {
+                    "ancient": 80,
+                    "base": 18,
+                    "middle": 35,
+                    "old": 70
+                },
+                "description": "<p>Badlanders are born and raised in radiation. Their typical lifespan is between 70 and 80 years. With advanced and expensive medical treatment, the effects of this radiation can be reversed, and those lucky enough can expect to live to 100.</p>",
+                "name": "Age",
+                "types": [
+                    "age"
+                ]
+            },
+            {
+                "description": "<p>Neither particularly fast, nor slow, your standard movement speed is 30ft.</p>",
+                "name": "Speed",
+                "speed": 30,
+                "types": [
+                    "base_speed"
+                ]
+            },
+            {
+                "armor_proficiencies": [
+                    {
+                        "category": "light"
+                    },
+                    {
+                        "category": "medium"
+                    }
+                ],
+                "description": "<p>Badlanders spend their lives under the constant threat of attack. From a young age you were forced to wear armor at all times. You are proficient in Light and Medium Armor.</p>",
+                "name": "Always Ready",
+                "types": [
+                    "armor_proficiency"
+                ]
+            },
+            {
+                "darkvision_range": 60,
+                "description": "<p>The radiation poisoning that has doomed you to a short lifespan has also gifted you with the ability to see in the dark unaided. You can see in complete darkness as if it were dim light up to a distance of 60ft. You cannot discern color in darkness, seeing only in shades of grey.</p>",
+                "name": "Hollow Sight",
+                "types": [
+                    "darkvision"
+                ]
+            },
+            {
+                "description": "<p>You can speak, read, and write English, and one other language of your choice.</p>",
+                "languages": [
+                    "english",
+                    "choice"
+                ],
+                "name": "Languages",
+                "types": "[language_proficiency]"
+            }
+        ],
+        "name": "Badlander",
+        "suborigins": {
+            "bruiser": {
+                "description": "Bruisers use their strength, intimidation, and violence to survive",
+                "features": [
+                    {
+                        "ability_score_increase": [
+                            {
+                                "ability": "strength",
+                                "increase": 2
+                            }
+                        ],
+                        "description": "<p>Your Strength score increases by 2.</p>",
+                        "name": "Ability Score Increase",
+                        "types": [
+                            "asi"
+                        ]
+                    },
+                    {
+                        "description": "You have proficiency in the Intimidation skill. You know how to use your hands when intimidation fails. Your unarmed strikes deal 1d6+Str points of bludgeoning damage.",
+                        "name": "One Scary Dude",
+                        "skill_proficiencies": [
+                            "intimidation"
+                        ],
+                        "types": [
+                            "skill_proficiency",
+                            "weapon_override"
+                        ],
+                        "weapon_override": {
+                            "damage_dice": "1d6"
+                        },
+                        "weapon_type": "unarmed_strike"
+                    }
+                ],
+                "name": "Bruiser"
+            },
+            "scavenger": {
+                "description": "Scavengers tear apart broken and discarded tech for the radiation leaking powercells within",
+                "feature_descriptions": {
+                    "Irradiated": "You have resistance to radiation damage.",
+                    "Scavenger": "You have proficiency in the Mechanics skill."
+                },
+                "features": [
+                    {
+                        "ability_score_increase": [
+                            {
+                                "ability": "technology",
+                                "increase": 2
+                            }
+                        ],
+                        "description": "<p>Your Technology score increases by 2.</p>",
+                        "name": "Ability Score Increase",
+                        "types": [
+                            "asi"
+                        ]
+                    },
+                    {
+                        "description": "You have proficiency in the Mechanics skill.",
+                        "name": "Scavenger",
+                        "skill_proficiencies": [
+                            "mechanics"
+                        ],
+                        "types": [
+                            "skill_proficiency"
+                        ]
+                    },
+                    {
+                        "damage_types": [
+                            "radiation"
+                        ],
+                        "description": "Due to constant exposure, your body has built up a tolerance to radiation. You have resistance to radiation damage.",
+                        "name": "Irradiated",
+                        "types": [
+                            "damage_resistance"
+                        ]
+                    }
+                ],
+                "name": "Scavenger"
+            }
+        }
+    },
+    "gutter_punk": {
+        "description": "<p>Gutter punks are part of an anti-social movement that rejects mainstream society and attempts to emulate their version of the punk movement from centuries past.</p> <p>Inspired by the punk rockers of history, gutter punks often wear ragged clothing consisting of torn pants, loose-fitting shirts, and sleeveless leather or jean jackets. Their jackets are decorated by themselves or their gang members using paint or markers. They favor spiked or studded embellishments and wear outlandish hairstyles and brightly painted augmentations designed to draw maximum attention.</p> <p>Gutter punks mostly live in slums or abandoned buildings alongside their fellows. Their counter culture ideals put them at odds with most authority figures, making honest work scarce, which in turn makes it hard for them to escape poverty.</p>",
+        "features": [
+            {
+                "ability_score_increase": [
+                    {
+                        "ability": "dexterity",
+                        "increase": 2
+                    },
+                    {
+                        "ability": "constitution",
+                        "increase": 1
+                    },
+                    {
+                        "ability": "technology",
+                        "increase": 1
+                    }
+                ],
+                "description": "<p>Your Dexterity score increases by 2, your Constitution and Technology scores increases by 1.</p>",
+                "name": "Ability Score Increase",
+                "types": [
+                    "asi"
+                ]
+            },
+            {
+                "age": {
+                    "ancient": 80,
+                    "base": 18,
+                    "middle": 38,
+                    "old": 68
+                },
+                "description": "<p>Gutter punks often don\u2019t live to old age, although this is due to their living conditions and lifestyle rather than any genetic reasons. If they are fortunate to live a healthy lifestyle, a gutter punk can expect to live around 100 years.</p>",
+                "name": "Age",
+                "types": [
+                    "age"
+                ]
+            },
+            {
+                "description": "<p>Due to many years running away from law enforcement and running towards trouble, you\u2019re slightly quicker on your feet than most people. Your base walking speed is 35 ft.</p>",
+                "name": "Speed",
+                "speed": 35,
+                "types": [
+                    "base_speed"
+                ]
+            },
+            {
+                "description": "<p>Due to its effectiveness in tight alleyways, the weapon of choice for gutter punks is the combat shotgun. You are proficient with this weapon.</p>",
+                "name": "Shotgunners",
+                "types": [
+                    "weapon_proficiency"
+                ],
+                "weapon_proficiencies": [
+                    {
+                        "category": "combat_shotgun"
+                    }
+                ]
+            },
+            {
+                "description": "<p>Gangs need a wide variety of skills. You may pick one skill of your choice to become proficient in.</p>",
+                "name": "Adaptive",
+                "skill_proficiencies": [
+                    "choice"
+                ],
+                "types": [
+                    "skill_proficiency"
+                ]
+            },
+            {
+                "description": "You\u2019ve grown up on the streets and have some basic contacts and a small reputation for yourself. You begin with Influence: Street 3.",
+                "influence": {
+                    "street": 3
+                },
+                "name": "Misspent Youth",
+                "types": [
+                    "influence"
+                ]
+            },
+            {
+                "description": "<p>You can speak, read, and write English, and two other languages of your choice.</p>",
+                "languages": [
+                    "english",
+                    "choice",
+                    "choice"
+                ],
+                "name": "Languages",
+                "types": [
+                    "language_proficiency"
+                ]
+            }
+        ],
+        "name": "Gutter Punk",
+        "suborigins": {}
+    },
+    "korporate_kid": {
+        "description": "<p>Korporate Kids are orphans raised in one of the corporate orphanages. The orphanages are in fact for-profit businesses, and the children within perform hours of work daily in exchange for shelter.</p> <p>These megacorporations use brainwashing and social manipulation techniques to ensure brand loyalty from those they raise.</p> <p>This brainwashing is incredibly effective, and many Korporate Kids feel that they owe their lives to the corporations and will willingly work with them for the rest of their lives.</p> <p>Occasionally there are rebels who break the mental programming and see their corporation for what it really is.</p> <p>Korporate Kids have been raised and directed from a very young age to fill the specific roles picked for them by their handlers. You may choose which role your handler assigned to you, or work with your GM to decide.</p>",
+        "features": [
+            {
+                "ability_score_increase": [
+                    {
+                        "ability": "intelligence",
+                        "increase": 2
+                    },
+                    {
+                        "ability": "technology",
+                        "increase": 1
+                    }
+                ],
+                "description": "<p>You were well educated by the corporations. A smarter worker is a more profitable worker. Your Intelligence score increases by 2 and your Technology score increases by 1.</p>",
+                "name": "Ability Score Increase",
+                "types": [
+                    "asi"
+                ]
+            },
+            {
+                "age": {
+                    "ancient": 90,
+                    "base": 18,
+                    "middle": 40,
+                    "old": 80
+                },
+                "description": "<p>Raised on corporation rations and with access to basic medicine and healthcare means that a Korporate Kid can expect to live to 110.</p>",
+                "name": "Age",
+                "types": [
+                    "age"
+                ]
+            },
+            {
+                "description": "<p>Due to many years running away from law enforcement and running towards trouble, you\u2019re slightly quicker on your feet than most people. Your base walking speed is 35 ft.</p>",
+                "name": "Speed",
+                "speed": 30,
+                "types": [
+                    "base_speed"
+                ]
+            },
+            {
+                "description": "<p>You can speak, read, and write English, and two other languages of your choice.</p>",
+                "languages": [
+                    "english",
+                    "choice",
+                    "choice"
+                ],
+                "name": "Languages",
+                "types": [
+                    "language_proficiency"
+                ]
+            }
+        ],
+        "name": "Korporate Kid",
+        "suborigins": {
+            "high_flyer": {
+                "description": "<p>These are the children who performed the best, seeking approval and validation from their corporation handlers. Their positive performance has been rewarded.</p>",
+                "features": [
+                    {
+                        "augmentations": {
+                            "tier1": [
+                                "choice"
+                            ]
+                        },
+                        "description": "<p>You have a Tier 1 Augmentation that was given to you to aid in your job. You may pick a Tier 1 Augmentation of your choice, related to the role you were given by your handler.</p>",
+                        "name": "Augmented",
+                        "type": "augment"
+                    }
+                ],
+                "name": "High Flyer"
+            },
+            "sleeker": {
+                "description": "<p>The majority of children decide to try and avoid confrontation, and you were one of them. You\u2019ve learned how to stay out of sight and how to run away when you have to.</p>",
+                "features": [
+                    {
+                        "description": "<p>You may take either the Hide or Disengage action as a bonus action on your turn.</p>",
+                        "name": "Avoidance",
+                        "types": [
+                            "bonus_action"
+                        ],
+                        "values": [
+                            "hide",
+                            "disengage"
+                        ]
+                    }
+                ],
+                "name": "Sleeker"
+            }
+        }
+    },
+    "regular_joe": {
+        "description": "<p>A regular joe is your average person living a day-to-day life. They aren\u2019t as tough as badlanders, nor as dexterous as gutter punks, but they fit easily into society and know how to deal with other people.</p> <p>The appearance of regular joes is the most common among the origins, with numerous people from all walks of life falling squarely into this category.</p>",
+        "features": [
+            {
+                "ability_score_increase": [
+                    {
+                        "ability": "people",
+                        "increase": 2
+                    },
+                    {
+                        "ability": "choice",
+                        "increase": 1
+                    },
+                    {
+                        "ability": "choice",
+                        "increase": 1
+                    }
+                ],
+                "description": "<p>Your People score increases by 2, plus two other ability scores of your choice increase by 1</p>",
+                "name": "Ability Score Increase",
+                "types": [
+                    "asi"
+                ]
+            },
+            {
+                "age": {
+                    "ancient": 90,
+                    "base": 18,
+                    "middle": 45,
+                    "old": 80
+                },
+                "description": "<p>Regular joes are normal people in an abnormal world. They live the longest, and healthiest lives, reaching middle age at 45 and dying between 100 and 110 years old.</p>",
+                "name": "Age",
+                "types": [
+                    "age"
+                ]
+            },
+            {
+                "description": "<p>Due to many years running away from law enforcement and running towards trouble, you\u2019re slightly quicker on your feet than most people. Your base walking speed is 35 ft.</p>",
+                "name": "Speed",
+                "speed": 35,
+                "types": [
+                    "base_speed"
+                ]
+            },
+            {
+                "description": "<p>You may pick proficiency in two skills of your choice.</p>",
+                "name": "Varied",
+                "skill_proficiencies": [
+                    "choice",
+                    "choice"
+                ],
+                "types": [
+                    "skill_proficiency"
+                ]
+            },
+            {
+                "description": "<p>You may pick one tool of your choice to become proficient in.</p>",
+                "name": "Tool Proficiency",
+                "tool_proficiencies": [
+                    "choice"
+                ],
+                "types": [
+                    "tool_proficiency"
+                ]
+            },
+            {
+                "description": "<p>You can speak, read, and write English, and one other language of your choice.</p>",
+                "languages": [
+                    "english",
+                    "choice"
+                ],
+                "name": "Languages",
+                "types": [
+                    "language_proficiency"
+                ]
+            }
+        ],
+        "name": "Regular Joe",
+        "suborigins": {}
+    },
+    "synth": {
+        "description": "<p>You were manufactured by one of the large robotics corporations using a combination of biological and robotic components. Then they added advanced AI inside a robotic brain. You are physically indistinguishable from a real human aside from identical bar codes under each eyelid.</p> <p>Synths were first created off-world in 2130. Those created from this first batch are very rare and are the oldest known of their kind at 55 years old.</p>",
+        "features": [
+            {
+                "ability_score_increase": [
+                    {
+                        "ability": "constitution",
+                        "increase": 2
+                    }
+                ],
+                "description": "<p>You aren\u2019t human. In many respects you are better than human. Your Constitution score increases by 2.</p>",
+                "name": "Ability Score Increase",
+                "types": [
+                    "asi"
+                ]
+            },
+            {
+                "age": {
+                    "ancient": 55,
+                    "base": 0,
+                    "middle": 16,
+                    "old": 45
+                },
+                "description": "<p>Synths are fully functioning adults at creation and appear to be in their early twenties. They age at a much slower rate than humans, but have a shortened lifespan. Even the most ancient synths tend to only look around 35 years old.</p>",
+                "name": "Age",
+                "types": [
+                    "age"
+                ]
+            },
+            {
+                "description": "<p>Your movement speed is 30ft.</p>",
+                "name": "Speed",
+                "speed": 30,
+                "types": [
+                    "base_speed"
+                ]
+            },
+            {
+                "description": "<p>As a synth, you have advantage on checks to avoid disease.</p>",
+                "name": "Bioenhanced",
+                "types": [
+                    "passive"
+                ]
+            },
+            {
+                "description": "<p>Instead of regular sleep, your enhancements allow you to sleep for just 4 hours a day and still gain the benefits of an 8 hour rest. Your AI produces the illusion of dreams for you in this state, usually of robot sheep.</p>",
+                "name": "Recharge",
+                "types": [
+                    "passive"
+                ]
+            },
+            {
+                "description": "<p>Your skin and muscles are interwoven with high strength composite materials, granding you a natural armor of 13+your Dexterity modifier. Even when wearing armor your AC cannot be any lower than that of your natural armor.</p>",
+                "name": "Composite Weaving",
+                "natural_base_ac": 13,
+                "types": [
+                    "natural_armor"
+                ]
+            },
+            {
+                "description": "<p>You can speak, read, and write English, and one other language of your choice.</p>",
+                "languages": [
+                    "english",
+                    "choice"
+                ],
+                "name": "Languages",
+                "types": [
+                    "language_proficiency"
+                ]
+            }
+        ],
+        "name": "Synth",
+        "suborigins": {
+            "houston_dynamics_m_iv": {
+                "description": "For those who need more sophisticated security than a standard mech, Houston Dynamics offers the MK. IV Personal Security Synth.",
+                "features": [
+                    {
+                        "ability_score_increase": [
+                            {
+                                "ability": "dexterity",
+                                "increase": 1
+                            }
+                        ],
+                        "description": "<p>Your Dexterity score increases by 1.</p>",
+                        "name": "Ability Score Increase",
+                        "types": [
+                            "asi"
+                        ]
+                    },
+                    {
+                        "description": "<p>You have a climb speed of 30ft.</p>",
+                        "name": "Advantageous Positioning",
+                        "speed": 30,
+                        "types": [
+                            "climb_speed"
+                        ]
+                    },
+                    {
+                        "description": "<p>You are proficient with assault rifles.</p>",
+                        "name": "Memory Implant",
+                        "types": [
+                            "weapon_proficiency"
+                        ],
+                        "weapon_proficiencies": [
+                            {
+                                "category": "assault_rifles"
+                            }
+                        ]
+                    }
+                ],
+                "name": "Houston Dynamics M. IV"
+            },
+            "shenzhen_solutions_paramour": {
+                "description": "The Paramour by Shenzhen Solutions makes the ideal host, counter intelligence asset, or personal companion.",
+                "features": [
+                    {
+                        "ability_score_increase": [
+                            {
+                                "ability": "people",
+                                "increase": 1
+                            }
+                        ],
+                        "description": "<p>You were built to deal with people, and emit pheromones that help you deal with people smoothly. Your People score increases by 1.</p>",
+                        "name": "Ability Score Increase",
+                        "types": [
+                            "asi"
+                        ]
+                    },
+                    {
+                        "description": "<p>You have advantage on People (Persuasion) checks made to flatter, charm, or seduce.</p>",
+                        "name": "Inbuilt Charm",
+                        "types": [
+                            "passive"
+                        ]
+                    }
+                ],
+                "name": "Shenzhen Solutions Paramour"
+            },
+            "visser_robotics_advanced_synth": {
+                "description": "The Advanced Synth by Visser Robotics was designed to work in the colonies as cheap labor. They have enhanced strength and night vision.",
+                "features": [
+                    {
+                        "ability_score_increase": [
+                            {
+                                "ability": "strength",
+                                "increase": 1
+                            }
+                        ],
+                        "description": "<p>Your Strength score increases by 1.</p>",
+                        "name": "Ability Score Increase",
+                        "types": [
+                            "asi"
+                        ]
+                    },
+                    {
+                        "darkvision_range": 120,
+                        "description": "<p>You can see in dim light as if it were bright light, and darkness as if it were dim light up to a distance of 120ft.</p>",
+                        "name": "Night Vision",
+                        "types": [
+                            "darkvision"
+                        ]
+                    }
+                ],
+                "name": "Visser Robotics Advanced Synth"
+            }
+        }
+    },
+    "wormer": {
+        "description": "<p>Wormers are born in the offworld colonies, or to parents from the colonies. They are named after the wormholes that voyagers must travel through to reach the colonies.</p> <p>The low gravity of the colonies has caused wormers to grow unusually tall and lanky compared to people from Earth. Those born in the colonies must rely on their natural hardiness to survive the harsh unknowns.</p> <p>In the offworld colonies, wormers are used as slave labor, and treated no better than synths. Many wormers work for food and board, born into contracts naively signed by their ancestors who believed they were leaving Earth for a better life.</p> <p>Wormers who live on Earth have defied the quarantine and snuck back onto the planet, gaining citizenship as soon as they set foot on Earth\u2019s soil. Treated as less than human, wormers are usually blamed for most of the petty crimes in the modern world and are quite often the victims of crime themselves.</p>",
+        "features": [
+            {
+                "ability_score_increase": [
+                    {
+                        "ability": "constitution",
+                        "increase": 2
+                    },
+                    {
+                        "ability": "dexterity",
+                        "increase": 1
+                    }
+                ],
+                "description": "<p>Your Constituion score increases by 2, and your Dexterity score increases by 1.</p>",
+                "name": "Ability Score Increase",
+                "types": [
+                    "asi"
+                ]
+            },
+            {
+                "age": {
+                    "ancient": 70,
+                    "base": 18,
+                    "middle": 30,
+                    "old": 60
+                },
+                "description": "<p>The human body isn\u2019t designed for low gravity, and wormers don\u2019t live as long as their earthborn counterparts. They generally live to around 70 years old.</p>",
+                "name": "Age",
+                "types": [
+                    "age"
+                ]
+            },
+            {
+                "description": "<p>Your long limbs aid in your movement. Your base movement speed is 40ft.</p>",
+                "name": "Speed",
+                "speed": 40,
+                "types": [
+                    "base_speed"
+                ]
+            },
+            {
+                "description": "<p>You are especially proficient in Sense Motive; double your proficiency bonus when you use this skill.</p>",
+                "name": "Like a Book",
+                "skills": [
+                    "sense_motive"
+                ],
+                "types": [
+                    "skill_expertise"
+                ]
+            },
+            {
+                "darkvision_range": 60,
+                "description": "<p>You live in a colony far from its solar system\u2019s star and have grown up used to the darkness. You can see in complete darkness as if it were dim light up to a distance of 60ft. You cannot discern color in darkness, seeing only in shades of grey.</p>",
+                "name": "Darkvision",
+                "types": [
+                    "darkvision"
+                ]
+            },
+            {
+                "description": "<p>You have disadvantage on attack rolls and Intelligence (Perception) checks when you, the target of your attack, or whatever you are trying to perceive is in direct sunlight.</p>",
+                "name": "A Twilight Planet",
+                "types": [
+                    "passive"
+                ]
+            },
+            {
+                "additional_hp": 1,
+                "description": "<p>You have to be tough to survive in the colonies. Your ancestors were the survivors of the brutalist worlds. You gain an additional 1 hit point per level.</p>",
+                "name": "Hard as Nails",
+                "types": [
+                    "hp_per_level"
+                ]
+            },
+            {
+                "description": "<p>Wormers are the descendants of the fittest of the fit, and the strongest of the strong. Your upper limits are doubled when determining your carrying capacity and the weight you can push, drag, or lift</p>",
+                "multiplier": 2,
+                "name": "Generations of Hardship",
+                "types": [
+                    "carrying_capacity_multiplier"
+                ]
+            },
+            {
+                "description": "<p>You can speak, read, and write Offworld Creole, English, and two other languages of your choice.</p>",
+                "languages": [
+                    "english",
+                    "offworld_creole",
+                    "choice",
+                    "choice"
+                ],
+                "name": "Languages",
+                "types": [
+                    "language_proficiency"
+                ]
+            }
+        ],
+        "name": "Wormer",
+        "suborigins": {}
+    }
+}
