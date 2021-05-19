@@ -8,6 +8,7 @@ class OriginEditor extends React.Component {
   constructor(props) {
     super(props);
     this.originData = props.data;
+    this.featureData = props.featureData;
     this.state = {
       selectedOrigin: null,
       selectedSuborigin: null,
@@ -51,6 +52,34 @@ class OriginEditor extends React.Component {
     });
   }
 
+  // Assumes all origin features have unique names (THEY SHOULD)
+  updateOriginFeature(feature) {
+    this.setState(state => {
+      state.selectedOriginFeatures.map(originFeature => {
+        if (feature.name === originFeature.name) {
+          return feature;
+        } else {
+          return originFeature;
+        }
+      });
+      return state;
+    })
+  }
+
+  // Assumes all suborigin features have unique names (THEY SHOULD)
+  updateSuboriginFeature(feature) {
+    this.setState(state => {
+      state.selectedOriginFeatures.map(originFeature => {
+        if (feature.name === originFeature.name) {
+          return feature;
+        } else {
+          return originFeature;
+        }
+      });
+      return state;
+    })
+  }
+
   renderSelected() {
     const selectedOrigin = this.state.selectedOrigin;
     const selectedSuborigin = this.state.selectedSuborigin;
@@ -85,10 +114,10 @@ class OriginEditor extends React.Component {
         </Row>
         <Row>
           <Col md={6} >
-            <FeatureList features={this.state.selectedOriginFeatures} />
+            <FeatureList features={this.state.selectedOriginFeatures} data={this.featureData} onUpdate={feature => this.updateOriginFeature(feature)} />
           </Col>
           <Col md={6} >
-            <FeatureList features={this.state.selectedSuboriginFeatures} />
+            <FeatureList features={this.state.selectedSuboriginFeatures} data={this.featureData} onUpdate={feature => this.updateSuboriginFeature(feature)} />
           </Col>
         </Row>
       </div>
@@ -99,7 +128,6 @@ class OriginEditor extends React.Component {
   render() {
     const origins = this.originData
     const selectedOrigin = this.renderSelected()
-    console.log(this.state)
     return (
       <Container>
         <Row>
@@ -134,13 +162,14 @@ class OriginStep extends React.Component {
 
   render() {
     return (
-      <Modal className="creatorStep" size="lg" show={this.props.show} onHide={this.props.handleClose}>
+      <Modal className="creatorStep" size="lg" show={this.props.show} onHide={this.props.handleClose} scrollable={true}>
         <Modal.Header>
           <Modal.Title>Select Origin</Modal.Title>
         </Modal.Header>
         <Modal.Body className="show-grid">
           <OriginEditor 
             data={this.props.data}
+            featureData={this.props.featureData}
             current={this.props.current}
             onComplete={this.updateSavable} />
           </Modal.Body>

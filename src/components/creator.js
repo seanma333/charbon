@@ -50,6 +50,7 @@ class Creator extends React.Component {
     super(props);
 
     // Load all data from json files
+    this.data = {}
     this.fetchData();
 
     // Begin with a blank slate. Update this in the future to be able to load a character.
@@ -82,30 +83,59 @@ class Creator extends React.Component {
         hp: null,
         senses: [],
         exploits: null,
-        attacks: ["unarmed_strike"],
+        attacks: ['unarmed_strike'],
         actions: [],
         bonus_actions: [],
         reactions: [],
         saving_throws: [],
-        weapon_proficiencies: ["unarmed_strike"],
+        weapon_proficiencies: ['unarmed_strike'],
         armor_proficiencies: [],
         skill_proficiencies: [],
         skill_half_proficiencies: null,
         skill_expertise: null,
         tool_proficiencies: [],
         tool_half_proficiencies: null,
-        tool_expertise: null
+        tool_expertise: null,
+        augmentations: []
       }
     };
   }
 
   fetchData() {
+    // Get ability score data
+    fetch('./json/ability_scores.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
+      .then(response => {
+        return response.json()
+      })
+      .then(data => this.data.abilityScores = data)
+    
+    // Get language data
+    fetch('./json/languages.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
+      .then(response => {
+        return response.json()
+      })
+      .then(data => this.data.languages = data)
+
+    // Get skills data
+    fetch('./json/skills.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
+      .then(response => {
+        return response.json()
+      })
+      .then(data => this.data.skills = data)
+
+    // Get tools data
+    fetch('./json/tools.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
+      .then(response => {
+        return response.json()
+      })
+      .then(data => this.data.tools = data)
+      
     // Get Origin data
     fetch('./json/origins.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
       .then(response => {
         return response.json()
       })
-      .then(data => this.originData = data)
+      .then(data => this.data.origins = data)
   }
 
   editName() {
@@ -121,6 +151,7 @@ class Creator extends React.Component {
   }
 
   render() {
+    console.log(this.data)
     const renderSteps = this.state.steps.map((step) => {
         return <Row key={step.name}>
           <StepButton
@@ -148,7 +179,15 @@ class Creator extends React.Component {
           <OriginStep
             show={this.state.openStep === "origin"}
             current={this.state.character.origin}
-            data={this.originData}
+            data={this.data.origins}
+            featureData={
+              {
+                abilityScores: this.data.abilityScores,
+                tools: this.data.tools,
+                skills: this.data.skills,
+                languages: this.data.languages
+              } 
+            }
             handleClose={() => this.closeStep()}
             handleSave={() => this.closeStep()}
           />

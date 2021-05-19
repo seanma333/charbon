@@ -1,0 +1,32 @@
+{
+	"strength": {
+		"name": "Strength",
+		"shortName": "STR",
+		"order": 1
+	},
+	"dexterity": {
+		"name": "Dexterity",
+		"shortName": "DEX",
+		"order": 2
+	},
+	"constitution": {
+		"name": "Constitution",
+		"shortName": "CON",
+		"order": 3
+	},
+	"intelligence": {
+		"name": "Intelligence",
+		"shortName": "INT",
+		"order": 4
+	},
+	"technology": {
+		"name": "Technology",
+		"shortName": "TEC",
+		"order": 5
+	},
+	"people": {
+		"name": "People",
+		"shortName": "PEO",
+		"order": 6
+	}
+}

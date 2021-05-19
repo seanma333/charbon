@@ -1,0 +1,66 @@
+{
+	"english": {
+		"name": "English",
+		"fluency_rate": 80
+	},
+	"mandarin": {
+		"name": "Mandarin",
+		"fluency_rate": 62
+	},
+	"spanish": {
+		"name": "Spanish",
+		"fluency_rate": 47
+	},
+	"arabic": {
+		"name": "Arabic",
+		"fluency_rate": 38
+	},
+	"tagalog": {
+		"name": "Tagalog",
+		"fluency_rate": 26
+	},
+	"korean": {
+		"name": "Korean",
+		"fluency_rate": 22
+	},
+	"japanese": {
+		"name": "Japanese",
+		"fluency_rate": 11
+	},
+	"cantonese": {
+		"name": "Cantonese",
+		"fluency_rate": 9
+	},
+	"german": {
+		"name": "German",
+		"fluency_rate": 7
+	},
+	"afrikaans": {
+		"name": "Afrikaans",
+		"fluency_rate": 6
+	},
+	"vietnamese": {
+		"name": "Vietnamese",
+		"fluency_rate": 5
+	},
+	"french": {
+		"name": "French",
+		"fluency_rate": 3
+	},
+	"polish": {
+		"name": "Polish",
+		"fluency_rate": 3
+	},
+	"hindi": {
+		"name": "Hindi",
+		"fluency_rate": 2
+	},
+	"russian": {
+		"name": "Russian",
+		"fluency_rate": 1
+	},
+	"offworld_creole": {
+		"name": "Offworld Creole",
+		"fluency_rate": 15
+	}
+}
