@@ -72,7 +72,7 @@
                     {
                         "type": "language_proficiency",
                         "num_languages":1,
-                        "excludes":"english"
+                        "excludes": ["english"]
                     }
                 ]
             }
@@ -301,7 +301,7 @@
                 ]
             },
             {
-                "description":"<p>Due to many years running away from law enforcement and running towards trouble, you\u2019re slightly quicker on your feet than most people. Your base walking speed is 35 ft.</p>",
+                "description":"<p>Your base walking speed is 30 feet.</p>",
                 "name":"Speed",
                 "speed":30,
                 "types":[
@@ -407,9 +407,9 @@
                 ]
             },
             {
-                "description":"<p>Due to many years running away from law enforcement and running towards trouble, you\u2019re slightly quicker on your feet than most people. Your base walking speed is 35 ft.</p>",
+                "description":"<p>Your base walking speed is 30 ft.</p>",
                 "name":"Speed",
-                "speed":35,
+                "speed":30,
                 "types":[
                     "base_speed"
                 ]

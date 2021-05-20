@@ -4,155 +4,179 @@ import parse from 'html-react-parser'
 import { Row, Col, Button, Card } from 'react-bootstrap'
 import { Multiselect } from "multiselect-react-dropdown";
 
-class FeatureCardSelections extends React.Component {
-  constructor(props) {
-    super(props);
-    this.preselected = props.preselected
-    this.choices = props.choices
-    this.displayTitle = props.title
-    this.limit = props.limit
+function initializeFeature(feature, source) {
+  // Generate an id for the feature based on its name and source
+  feature.id = source + '_' + feature.name.toLowerCase().replaceAll(' ', '_')
+  if (feature.hasOwnProperty('choices')) {
+    feature.complete = false
+    feature.choices = feature.choices.map(choice => {
+      choice.selected = [];
+      return choice;
+    });
+  } else {
+    feature.complete = true
   }
+  return feature
+}
 
-  handleOnSelect(selectedList, selectedItem) {
-    console.log(selectedList)
-    console.log(selectedItem)
-  }
-
-  handleOnRemove(selectedList, removedItem) {
-    console.log(selectedList)
-    console.log(removedItem)
-  }
-
-  render() {
-    return (
-      <div>
-        <h6>{this.displayTitle}</h6>
-        <Multiselect 
-          options={this.choices}
-          disablePreselectedValues={true}
-          onSelect={this.handleOnSelect}
-          onRemove={this.handleOnRemove}
-          selectionLimit={this.limit}
-          selectedValues={this.preselected}
-          displayValue="displayName"
-          showCheckbox={true}
-        />
-      </div>
-    )
-  }
+function FeatureCardSelections(props) {
+  return (
+    <div>
+      <h6 key='title'>{props.title}</h6>
+      <Multiselect 
+        key={props.id}
+        options={props.choices}
+        onSelect={props.onUpdate}
+        onRemove={props.onUpdate}
+        selectionLimit={props.limit}
+        selectedValues={props.preselected}
+        displayValue="displayName"
+        showCheckbox={true}
+        avoidHighlightFirstOption={true}
+        hidePlaceholder={true}
+      />
+    </div>
+  )
 }
 
 class FeatureCard extends React.Component {
   constructor(props) {
     super(props);
-    this.featureTypes = this.props.feature.types;
     this.data = this.props.data;
+    this.feature = this.props.feature
+    this.onUpdate = this.props.onUpdate
+    this.featureTypes = this.feature.types
+    this.state = {
+      complete: this.complete
+    }
   }
 
-  renderChoicesByType(type) {
-    if (type == 'augmentations') return <div/>
-    if (!this.props.feature.hasOwnProperty('choices')) {
+  updateFeatureState() {
+    if (!this.feature.hasOwnProperty('choices')) return;
+
+    if (this.feature.choices.every(c => {
+      switch (c.type) {
+        case "asi":
+          return c.num_abilities === c.selected.length;
+        case "language_proficiency":
+          return c.num_languages === c.selected.length;
+        case "skill_proficiency":
+          return c.num_skills === c.selected.length;
+        case "tool_proficiency":
+          return c.num_tools === c.selected.length;
+        default:
+          return true;
+      }
+    })) {
+      this.feature.complete = true;
+    } else {
+      this.feature.complete = false;
+    }
+    this.setState(state => {
+      state.complete = this.feature.complete;
+      return state;
+    })
+
+    this.props.onUpdate(this.feature)
+  }
+
+  renderChoices() {
+    if (!this.feature.hasOwnProperty('choices')) {
       return <div />
     }
-    const choices = this.props.feature.choices
-    console.log(choices)
 
-    if (choices.length === 0) {
+    if (this.feature.choices.length === 0) {
       return <div />
     }
 
     return (
-      choices.map(choice => {
+      this.feature.choices.map(choice => {
+        var display = 'Select ';
+        var choices = [];
+        var preselected = [];
+        var limit = null;
+
         switch (choice.type) {
           case "asi":
-            const abilityScores = Object.entries(this.data.abilityScores).map( ([k,v]) => {
-              return {"id": k, "displayName": v.name};
-            }).filter(a => !choice.excludes.includes(a.id))
-            var display = 'Select '
-            if (choice.num_abilities === 1) {
-              display += 'an ability score to increase by ' + choice.increase
+            choices = Object.entries(this.data.abilityScores).map( ([k,v]) => {
+              return {"key": k, "displayName": v.name};
+            }).filter(a => !choice.excludes.includes(a.key));
+            limit = choice.num_abilities;
+            if (limit === 1) {
+              display += 'an ability score to increase by ' + choice.increase;
             } else {
-              display += choice.num_abilities + ' ability scores to increase by ' + choice.increase
+              display += choice.num_abilities + ' ability scores to increase by ' + choice.increase;
             }
-            return (
-              <FeatureCardSelections
-                title={display}
-                choices={abilityScores}
-                preselected={[]}
-                limit={choice.num_abilities}
-              />)
+            break;
           case "language_proficiency":
-            const languages = Object.entries(this.data.languages).map(([k,v]) => {
-              return { "id": k, "displayName": v.name }
-            }).filter(l => !choice.excludes.includes(l.id));
-            var display = 'Select '
-            if (choice.num_languages === 1) {
-              display += 'a language'
+            choices = Object.entries(this.data.languages).map(([k,v]) => {
+              return { "key": k, "displayName": v.name };
+            }).filter(l => !choice.excludes.includes(l.key));
+            limit = choice.num_languages;
+            if (limit === 1) {
+              display += 'a language';
             } else {
-              display += choice.num_languages + ' languages'
+              display += choice.num_languages + ' languages';
             }
-            return (
-              <FeatureCardSelections
-                title={display}
-                choices={languages}
-                preselected={[]}
-                limit={choice.num_skills}
-              />)
+            break;
           case "skill_proficiency":
-            const skills = Object.entries(this.data.skills).map(([k,v]) => {
-              const displayName = v.name + ' (' + this.data.abilityScores[v.ability].shortName + ')'
-              return {"id": k, "displayName": displayName}
-            }).filter(s => !choice.excludes.includes(s.id));
-            var display = 'Select '
-            if (choice.num_skills === 1) {
-              display += 'a skill'
+            choices = Object.entries(this.data.skills).map(([k,v]) => {
+              const displayName = v.name + ' (' + this.data.abilityScores[v.ability].shortName + ')';
+              return {"key": k, "displayName": displayName}
+            }).filter(s => !choice.excludes.includes(s.key));
+            limit = choice.num_skills;
+            if (limit === 1) {
+              display += 'a skill';
             } else {
-              display += choice.num_skills + ' skills'
+              display += choice.num_skills + ' skills';
             }
-            return (
-              <FeatureCardSelections
-                title={display}
-                choices={skills}
-                preselected={[]}
-                limit={choice.num_skills}
-              />)
+            break;
           case "tool_proficiency":
-            const tools = Object.entries(this.data.tools).map(([k,v]) => {
-              return {"id": k, "displayName": v.name}
-            }).filter(t => !choice.excludes.includes(t.id));
-            var display = 'Select '
-            if (choice.num_tools === 1) {
-              display += 'a tool'
+            choices = Object.entries(this.data.tools).map(([k,v]) => {
+              return {"key": k, "displayName": v.name}
+            }).filter(t => !choice.excludes.includes(t.key));
+            limit = choice.num_tools;
+            if (limit === 1) {
+              display += 'a tool';
             } else {
-              display += choice.num_tools + ' tools'
+              display += choice.num_tools + ' tools';
             }
-            return (
-              <FeatureCardSelections
-                title={display}
-                choices={tools}
-                preselected={[]}
-                limit={choice.num_tools}
-              />)
+            break;
           default:
             return <div />
         }
+        return (
+          <FeatureCardSelections
+            id={this.feature.id}
+            title={display}
+            choices={choices}
+            preselected={preselected}
+            limit={limit}
+            onUpdate={(selections) => {
+              choice.selected = selections;
+              this.updateFeatureState();
+            }}
+          />
+        )
       })
     );
   }
 
 
   render() {
-    const descriptionComponent = parse(this.props.feature.description);
-    const choices = this.featureTypes.map(t => this.renderChoicesByType(t))
+    const descriptionComponent = parse(this.feature.description);
+    const choices = this.renderChoices()
 
     return (
-      <Card className="featureCard">
-        <Card.Title>{this.props.feature.name}</Card.Title>
-        <Card.Body>
-          <Row>{descriptionComponent}</Row>
-          <Row>{choices}</Row>
-        </Card.Body>
-      </Card>
+      <div key={this.feature.id}>
+        <Card className="feature-card">
+          <Card.Title>{this.feature.name}</Card.Title>
+          <Card.Body>
+            <Row key='description'>{descriptionComponent}</Row>
+            <Row key='choices'>{choices}</Row>
+          </Card.Body>
+        </Card>
+      </div>
     )
   }
 }
@@ -165,7 +189,7 @@ function FeatureList(props) {
           <FeatureCard
             feature={feature}
             data={props.data}
-            onUpdate={feature => props.onUpdate(feature)}
+            onUpdate={props.onUpdate}
           />
         </Row>
       )
@@ -207,8 +231,8 @@ function OptionList(props) {
   return options.map(
     option => {
       return (
-        <Row>
-          <OptionSelector 
+        <Row key={option}>
+          <OptionSelector
             value={props.options[option].name}
             selected={option === props.selected}
             onClick={() => props.onClick(option)}
@@ -219,4 +243,4 @@ function OptionList(props) {
   )
 }
 
-export { FeatureList, Description, SaveButton, OptionList }
+export { FeatureList, FeatureCard, Description, SaveButton, OptionList, initializeFeature }

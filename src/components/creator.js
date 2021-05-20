@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Row, Col, Button } from 'react-bootstrap'
 
-import OriginStep from './originstep'
+import OriginStep from './origin_step'
 
 function StepButton(props) {
   const buttonName = props.value.split("_")
@@ -32,14 +32,12 @@ function StepButton(props) {
 class CharacterNameEditor extends React.Component {
   render() {
     const displayName = (this.props.name === null) ? 'Character Name' : this.state.name
-    console.log(displayName)
     return <div className="characterName">{displayName}</div>
   }
 }
 
+// Used for displaying the character as currently built
 function CharacterDisplay(props) {
-  const character = props.character;
-  console.log(character)
   return (
     <Row></Row>
   )
@@ -50,8 +48,7 @@ class Creator extends React.Component {
     super(props);
 
     // Load all data from json files
-    this.data = {}
-    this.fetchData();
+    this.data = this.props.data
 
     // Begin with a blank slate. Update this in the future to be able to load a character.
     this.state = {
@@ -101,57 +98,28 @@ class Creator extends React.Component {
     };
   }
 
-  fetchData() {
-    // Get ability score data
-    fetch('./json/ability_scores.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
-      .then(response => {
-        return response.json()
-      })
-      .then(data => this.data.abilityScores = data)
-    
-    // Get language data
-    fetch('./json/languages.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
-      .then(response => {
-        return response.json()
-      })
-      .then(data => this.data.languages = data)
-
-    // Get skills data
-    fetch('./json/skills.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
-      .then(response => {
-        return response.json()
-      })
-      .then(data => this.data.skills = data)
-
-    // Get tools data
-    fetch('./json/tools.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
-      .then(response => {
-        return response.json()
-      })
-      .then(data => this.data.tools = data)
-      
-    // Get Origin data
-    fetch('./json/origins.json', {headers : { 'Content-Type': 'application/json', 'Accept': 'application/json'}})
-      .then(response => {
-        return response.json()
-      })
-      .then(data => this.data.origins = data)
-  }
-
   editName() {
-    this.setState(state => (state.editingName = true, state));
+    this.setState(state => {
+      state.editingName = true;
+      return state;
+    });
   }
 
   openStep(stepName) {
-    this.setState(state => (state.openStep = stepName, state));
+    this.setState(state => {
+      state.openStep = stepName
+      return state;
+    });
   }
 
   closeStep() {
-    this.setState(state => (state.openStep = false, state));
+    this.setState(state => {
+      state.openStep = false;
+      return state;
+    });
   }
 
   render() {
-    console.log(this.data)
     const renderSteps = this.state.steps.map((step) => {
         return <Row key={step.name}>
           <StepButton
@@ -172,13 +140,13 @@ class Creator extends React.Component {
 
             <Col lg={8}>
               <Row><CharacterNameEditor name={this.state.character.name} editing={this.state.editingName} /></Row>
-              <Row>{/* Display the character*/}</Row>
+              <Row><CharacterDisplay character={this.state.character} /></Row>
             </Col>
           </Row>
 
           <OriginStep
             show={this.state.openStep === "origin"}
-            current={this.state.character.origin}
+            current={this.state.character}
             data={this.data.origins}
             featureData={
               {
