@@ -1,0 +1,106 @@
+{
+	"athletics": {
+		"name": "Athletics",
+		"ability": "strength"
+	},
+	"intimidation": {
+		"name": "Intimidation",
+		"ability": "strength"
+	},
+	"acrobatics": {
+		"name": "Acrobatics",
+		"ability": "dexterity"
+	},
+	"sleight_of_hand": {
+		"name": "Sleight of Hand",
+		"ability": "dexterity"
+	},
+	"stealth": {
+		"name": "Stealth",
+		"ability": "dexterity"
+	},
+	"vehicles_land": {
+		"name": "Vehicles (Land)",
+		"ability": "dexterity"
+	},
+	"history": {
+		"name": "History",
+		"ability": "intelligence"
+	},
+	"investigation": {
+		"name": "Investigation",
+		"ability": "intelligence"
+	},
+	"gambling": {
+		"name": "Gambling",
+		"ability": "intelligence"
+	},
+	"religion": {
+		"name": "Religion",
+		"ability": "intelligence"
+	},
+	"navigation": {
+		"name": "Navigation",
+		"ability": "intelligence"
+	},
+	"tracking": {
+		"name": "Tracking",
+		"ability": "intelligence"
+	},
+	"perception": {
+		"name": "Perception",
+		"ability": "intelligence"
+	},
+	"engineering": {
+		"name": "Engineering",
+		"ability": "intelligence"
+	},
+	"streetwise": {
+		"name": "Streetwise",
+		"ability": "intelligence"
+	},
+	"computing": {
+		"name": "Computing",
+		"ability": "technology"
+	},
+	"medicine": {
+		"name": "Medicine",
+		"ability": "technology"
+	},
+	"robotics": {
+		"name": "Robotics",
+		"ability": "technology"
+	},
+	"vehicles_aircraft": {
+		"name": "Vehicles (aircraft)",
+		"ability": "technology"
+	},
+	"mechanics": {
+		"name": "Mechanics",
+		"ability": "technology"
+	},
+	"bureaucracy": {
+		"name": "Bureaucracy",
+		"ability": "people"
+	},
+	"deception": {
+		"name": "Deception",
+		"ability": "people"
+	},
+	"performance": {
+		"name": "Performance",
+		"ability": "people"
+	},
+	"persuasion": {
+		"name": "Persuasion",
+		"ability": "people"
+	},
+	"presence": {
+		"name": "Presence",
+		"ability": "people"
+	},
+	"sense_motive": {
+		"name": "Sense Motive",
+		"ability": "people"
+	}
+}
