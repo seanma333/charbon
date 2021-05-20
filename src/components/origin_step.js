@@ -9,12 +9,23 @@ class OriginEditor extends React.Component {
     super(props);
     this.originData = props.data;
     this.featureData = props.featureData;
-    this.availableSuborigins = {};
-    this.selectedOriginFeatures = [];
-    this.selectedSuboriginFeatures = [];
+
+    var origin = null;
+    var suborigin = null;
+    if (props.current.origin) {
+      origin = props.current.origin.origin
+      suborigin = props.current.origin.suborigin
+      this.availableSuborigins = this.originData[origin].suborigins
+      this.selectedOriginFeatures = props.current.features.filter(f => f.source === 'origin')
+      this.selectedSuboriginFeatures = props.current.features.filter(f => f.source === 'suborigin')
+    } else {
+      this.availableSuborigins = {};
+      this.selectedOriginFeatures = [];
+      this.selectedSuboriginFeatures = [];
+    }
     this.state = {
-      selectedOrigin: null,
-      selectedSuborigin: null
+      selectedOrigin: origin,
+      selectedSuborigin: suborigin
     }
   }
 
@@ -69,7 +80,7 @@ class OriginEditor extends React.Component {
     }
     const originData = this.originData[selectedOrigin]
     var suboriginData = {name: null, description: null}
-    if (selectedSuborigin !== null && selectedSuborigin in originData["suborigins"]) {
+    if (selectedSuborigin !== null && selectedSuborigin in this.availableSuborigins) {
       suboriginData = this.availableSuborigins[selectedSuborigin]
     }
 
@@ -87,10 +98,10 @@ class OriginEditor extends React.Component {
     return (
       <div>
         <Row>
-          <Col md={6}>
+          <Col md={7}>
             <Description name={originData.name} description={originData.description} />
           </Col>
-          <Col lg={2} />
+          <Col lg={1} />
           <Col lg={4}>
             <Row>
               <OptionList
@@ -155,7 +166,6 @@ class OriginStep extends React.Component {
     // - Suborigin must be selected (if suborigin exists)
     // - All selected suborigin featrues must be complete (if suborigin exists)\
     var stepIsComplete = false
-    console.log(value)
     this.selected = value
     if (this.selected.origin !== null &&
         this.selected.originFeatures.every(f => f.complete) &&
@@ -170,6 +180,27 @@ class OriginStep extends React.Component {
     this.setState({
       saveable: stepIsComplete
     });
+  }
+
+  saveOrigin() {
+    const origin = {
+      origin: this.selected.origin,
+      suborigin: this.selected.suborigin
+    }
+    const features = this.selected.originFeatures.map(f => {
+      f['source'] = 'origin';
+      return f;
+    })
+    if (!this.selected.noSuborigins) {
+      this.selected.suboriginFeatures.forEach(f => {
+        f['source'] = 'suborigin';
+        features.push(f)
+      })
+    }
+    this.props.handleSave({
+      origin: origin,
+      features: features
+    })
   }
 
   render() {
@@ -188,7 +219,7 @@ class OriginStep extends React.Component {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.props.handleClose}>Close</Button>
-          <SaveButton value="Save Origin" enabled={this.state.saveable} onClick={this.props.handleSave} />
+          <SaveButton value="Save Origin" enabled={this.state.saveable} onClick={() => this.saveOrigin()} />
         </Modal.Footer>
       </Modal>
     )

@@ -1,4 +1,15 @@
 {
+	"unarmed_strike": {
+		"name": "Unarmed Strike",
+		"category": "unarmed",
+		"damage_dice": 1,
+		"damage_type": "bludgeoning",
+		"range": null,
+		"price": null,
+		"properties": [],
+		"ammo_type": null,
+		"weight": 0
+	},
 	"baton": {
 		"name": "Baton",
 		"category": "melee",

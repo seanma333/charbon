@@ -33,7 +33,8 @@ class App extends React.Component {
       'skills',
       'tools',
       'vices',
-      'weapons'
+      'weapons',
+      'base_character_values'
     ];
 
     Promise.all(data_to_load.map(name => {

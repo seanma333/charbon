@@ -356,10 +356,6 @@
                         "name":"Avoidance",
                         "types":[
                             "bonus_action"
-                        ],
-                        "values":[
-                            "hide",
-                            "disengage"
                         ]
                     }
                 ],

@@ -1,7 +1,7 @@
 import React from 'react'
 import parse from 'html-react-parser'
 
-import { Row, Col, Button, Card } from 'react-bootstrap'
+import { Row, Button, Card } from 'react-bootstrap'
 import { Multiselect } from "multiselect-react-dropdown";
 
 function initializeFeature(feature, source) {
@@ -34,6 +34,7 @@ function FeatureCardSelections(props) {
         showCheckbox={true}
         avoidHighlightFirstOption={true}
         hidePlaceholder={true}
+        closeOnSelecte={false}
       />
     </div>
   )
@@ -93,7 +94,7 @@ class FeatureCard extends React.Component {
       this.feature.choices.map(choice => {
         var display = 'Select ';
         var choices = [];
-        var preselected = [];
+        var preselected = choice.selected;
         var limit = null;
 
         switch (choice.type) {
@@ -166,10 +167,11 @@ class FeatureCard extends React.Component {
   render() {
     const descriptionComponent = parse(this.feature.description);
     const choices = this.renderChoices()
+    const border = this.feature.complete ? 'primary' : 'secondary'
 
     return (
       <div key={this.feature.id}>
-        <Card className="feature-card">
+        <Card border={border} className="feature-card">
           <Card.Title>{this.feature.name}</Card.Title>
           <Card.Body>
             <Row key='description'>{descriptionComponent}</Row>
