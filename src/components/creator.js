@@ -114,18 +114,30 @@ class Creator extends React.Component {
       {name: 'level_up', status: 0},
       {name: 'next_steps', status: 0}
     ]
-    this.character = {
-      name: null,
-      age: null,
-      features: []
-    }
-    Object.entries(this.data.baseCharacterValues).forEach(([k,v]) => {this.character[k] = v})
+    this.character = this.getBaseCharacter()
+    this.character.name = null
+    this.character.age = null
+    this.character.features = []
 
     // Begin with a blank slate. Update this in the future to be able to load a character.
     this.state = {
       editingName: false,
       openStep: null
     };
+  }
+
+  getBaseCharacter() {
+    const char = JSON.parse(JSON.stringify(this.data.baseCharacterValues))
+    // Set all base ability scores to 10. 
+    // TODO: Remove this once the ability score step is added.
+    char.baseAbilities = {}
+    Object.keys(this.data.abilityScores).map(a => char.baseAbilities[a] = 10)
+
+    // Set level to 1.
+    // TODO: remove this once the class step is added.
+    char.level = 1
+
+    return char
   }
 
   openStep(stepName) {
@@ -191,40 +203,49 @@ class Creator extends React.Component {
 
   // Make all the calculations for the character based on raw values and features
   buildCharacter() {
+    // Create the base character (no features, augmentations, or equipment)
+    // This is what will be modified for tne new build.
+    const build = this.getBaseCharacter()
 
-    // Create a copy of the current character and reset its base values (no features, augmentations, or equipment)
-    const character = this.character
-    Object.entries(this.data.baseCharacterValues).forEach(([k,v]) => {
-      // Need to deep copy the base values otherwise they get overwritten
-      character[k] = JSON.parse(JSON.stringify(v));
-    })
-
+    // Very common: list of proficiencies can be updated from multiple places
     function adjustProficiencies(proficiencyType, proficiencies) {
       proficiencies.forEach(p => {
-        if (!character[proficiencyType].includes(p)) {
-          character[proficiencyType].push(p);
+        if (!build[proficiencyType].includes(p)) {
+          build[proficiencyType].push(p);
         }
       })
     }
 
+    // Set the character ability scores to the base level (determined in ability score step).
+    // Also copy over the baseAbilities for future updates.
+    if (this.character.baseAbilities) {
+      build.baseAbilities = {}
+      build.abilityScores = {}
+      Object.entries(this.character.baseAbilities).forEach(([ability, score]) => {
+        build.baseAbilities[ability] = score;
+        build.abilityScores[ability] = score;
+      });
+    }
+
     // - Go through every feature on the character and adjust character values
-    character.features.forEach(feature => {
+    this.character.features.forEach(feature => {
       // Static features
       feature.types.forEach(type => {
         switch (type) {
           case "age":
-            character.age_range = feature.age;
+            build.age_range = feature.age;
             break;
           case "base_speed":
-            character.base_speed = feature.speed
+            build.base_speed = feature.speed
             break
           case "climb_speed":
-            character.climb_speed = feature.speed
+            build.climb_speed = feature.speed
             break
           case "asi":
-            if (character.abilityScores) {
+            if (build.abilityScores) {
+              console.log(build.abilityScores)
               feature.ability_score_increase.forEach(asi => {
-                character.abilityScores[asi.ability] += asi.increase;
+                build.abilityScores[asi.ability] += asi.increase;
               })
             }
             break;
@@ -244,33 +265,38 @@ class Creator extends React.Component {
             adjustProficiencies('languages', feature.languages);
             break
           case "darkvision":
-            const existingDarkvision = character.senses.filter(sense => sense.type === 'darkvision')
+            const existingDarkvision = build.senses.filter(sense => sense.type === 'darkvision')
             if (existingDarkvision.length > 0)
-              character.senses = character.senses.map(sense => {
+              build.senses = build.senses.map(sense => {
                 if (sense.type !== 'darkvision' || sense.range > feature.darkvision_range) {
                   return sense;
                 } else {
-                  return {'type': 'darkvision', 'range': feature.darkvision_range}
+                  return {type: 'darkvision', range: feature.darkvision_range}
                 }
               })
             else {
-              character.senses.push({'type': 'darkvision', 'range': feature.darkvision_range})
+              build.senses.push({'type': 'darkvision', 'range': feature.darkvision_range});
             }
             break;
           case "weapon_override":
-            character.weapon_overrides[feature.weapon_type] = feature.weapon_override
+            build.weapon_overrides[feature.weapon_type] = feature.weapon_override;
             break;
           case "natural_armor":
-            character.natural_armor = feature.natural_base_ac
+            build.natural_armor = feature.natural_base_ac;
             break;
           case "damage_resistance":
-            adjustProficiencies('damage_resistances', feature.damage_types)
+            adjustProficiencies('damage_resistances', feature.damage_types);
             break;
           case "bonus_action":
-            character.bonus_actions.push({name: feature.name, description: feature.description})
+            build.bonus_actions.push({name: feature.name, description: feature.description});
+            break;
+          case "influence":
+            Object.entries(feature.influence).forEach(([type,value]) => {
+              build.baseInfluence[type] = Math.max(build.baseInfluence[type], value)
+            });
             break;
           default:
-            console.log('static: ' + type)
+            console.log('Missing static: ' + type)
             break;
         }
       })
@@ -280,9 +306,9 @@ class Creator extends React.Component {
         feature.choices.forEach(choice => {
           switch(choice.type) {
             case "asi":
-              if (this.character.abilityScores) {
+              if (this.build.abilityScores) {
                 choice.selections.forEach(a => {
-                  this.character.abilityScores[a] += choice.increase;
+                  this.build.abilityScores[a] += choice.increase;
                 })
               }
               break;
@@ -302,7 +328,7 @@ class Creator extends React.Component {
               adjustProficiencies('languages', choice.selected.map(s => s.key));
               break
             default:
-              console.log('choice: ' + choice.type)
+              console.log('Missing choice: ' + choice.type)
               break;
           }
         })
@@ -310,59 +336,110 @@ class Creator extends React.Component {
     })
 
     // - Calculate Ability Scores Mods
-    if (!this.character.abilityScores) {
+    if (!build.abilityScores) {
       // NOTE: Everything after this point requires ability modifiers. If that's not set, break here.
-      this.character = character;
+      this.character = build;
       return;
     } else {
-      character.abilityMods = {}
-      Object.entries(this.character.abilityScores).forEach(([ability,score]) => {
-        character.abilityMods[ability] = Math.floor((score - 10) / 2)
+      build.abilityMods = {}
+      Object.entries(build.abilityScores).forEach(([ability,score]) => {
+        build.abilityMods[ability] = Math.floor((score - 10) / 2)
       })
     }
 
     // - Calculate AC (based on armor & helmet)
-    if (character.armor) {
-      const armorStats = this.data.armor[this.character.armor]
+    build.armor = this.character.armor
+    build.helmet = this.character.helmet
+    if (build.armor) {
+      const armorStats = this.data.armor[build.armor]
       switch (armorStats.category) {
         case "light":
-          character.ac = armorStats.base_ac + this.character.abilityMods.dexterity;
+          build.ac = armorStats.base_ac + build.abilityMods.dexterity;
           break;
         case "medium":
-          character.ac = armorStats.base_ac + Math.max(2, this.character.abilityMods.dexterity);
+          build.ac = armorStats.base_ac + Math.max(2, build.abilityMods.dexterity);
           break;
         case "heavy":
-          character.ac = armorStats.base_ac
+          build.ac = armorStats.base_ac
           break;
         default:
-          character.ac = this.character.natural_armor + this.character.abilityMods.dexterity;
+          build.ac = build.natural_armor + build.abilityMods.dexterity;
           break;
       }
     } else {
-      character.ac = this.character.natural_armor + this.character.abilityMods.dexterity;
+      build.ac = build.natural_armor + build.abilityMods.dexterity;
     }
 
-    if (character.helmet) {
-      const helmetStats = this.data.armor[this.character.helmet]
-      character.ac += helmetStats.base_ac
+    if (build.helmet) {
+      const helmetStats = this.data.armor[build.helmet]
+      build.ac += helmetStats.base_ac
     }
 
-    // NOTE: Everything after this point requires character level. If that's not set, break here.
-    if (!character.level) {
-      this.character = character;
+    // NOTE: Everything after this point requires character level (including proficiency bonus).
+    // If that's not set, break here.
+    build.level = this.character.level
+    if (!build.level) {
+      this.character = build;
       return;
     }
-    const proficiency_bonus = [2,2,2,2,3,3,3,3,4,4][this.character.level - 1]
+    const proficiency = [2,2,2,2,3,3,3,3,4,4][Math.max(build.level - 1, 0)]
 
-    // - Calculate skills (and add passive perception to senses)
+    // - Calculate skill proficiencies (including half and expertise) (and add passive perception to senses)
+    build.skillMods = {}
+    Object.entries(this.data.skills).forEach(([skill,data]) => {
+      const halfBonus = build.skill_half_proficiencies.includes(skill) ? Math.round(proficiency / 2) : 0;
+      const profBonus = build.skill_proficiencies.includes(skill) ? proficiency : 0;
+      const expertiseBonus = build.skill_expertise.includes(skill) ? (2 * proficiency) : 0;
 
+      build.skillMods[skill] = Math.max(halfBonus, profBonus, expertiseBonus);
+    });
 
     // - Create Attacks (based on weapons)
+    build.weapons = this.character.weapons
+    build.attacks = build.weapons.map(w => {
+      const weapon = JSON.parse(JSON.stringify(this.data.weapons[w.type]))
+
+      // Apply weapon override
+      if (build.weapon_overrides[w.type]) {
+        Object.entries(build.weapon_overrides[w.type]).forEach(([prop,override]) => {
+          console.log(prop)
+          console.log(override)
+          weapon[prop] = override;
+          console.log(weapon)
+        })
+      }
+
+      var abilityMod = build.abilityMods.dexterity; // Most weapons are light guns in Carbon 2185, so we'll use DEX as a default
+      if (['melee','unarmed','heavy_weapons'].includes(weapon.category)) {
+        abilityMod = weapon.properties.includes('finesse') ? Math.max(build.abilityMods.strength, build.abilityMods.dexterity) : build.abilityMods.strength
+      }
+
+      const proficiencyMod = build.weapon_proficiencies.some(p => {
+        return (p.category === weapon.category) || (p.type === w.type)
+      }) ? proficiency : 0;
+
+      // TODO: Add other bonuses, but we'll start with this basic one for now
+      const attackBonus = abilityMod + proficiencyMod
+      const damageRoll = weapon.damage_dice + '+' + abilityMod
+
+      return {
+        type: w.type,
+        name: weapon.name,
+        attackBonus: attackBonus,
+        damageRoll: damageRoll,
+        damageType: weapon.damage_type,
+        range: weapon.range
+      }
+    })
+
+    // TODO: Two-Weapon Fighting
 
     // - Calculate carrying capacity
 
     // - Calculate carried weight and encumbrance
 
+    // Finished!
+    this.character = build
   }
 
   render() {

@@ -20,6 +20,7 @@
 	"base_speed": null,
 	"damage_reductions": [],
 	"damage_resistances": [],
-	"weapons": ["unarmed_strike"],
-	"weapon_overrides": {}
+	"weapons": [{"type": "unarmed_strike"}],
+	"weapon_overrides": {},
+	"baseInfluence": {"street": 0, "corporate": 0}
 }
